@@ -1,91 +1,287 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Stepora Shoes</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stepora Shoes</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="index.css">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">Stepora</div>
+      <nav>
+        <a href="index.html"><b>Accueil</b></a>
+        <a href="produits.html"><b>Produits</b></a>
+        <a href="contact.html"><b>Contact</b></a>
+      </nav>
+    </header>
 
-<header class="navbar">
-  <div class="logo">Stepora</div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Men</a>
-    <a href="#">Women</a>
-    <a href="#">Kids</a>
-  </nav>
-</header>
+    <section class="hero">
+      <!-- PAIRE EN ARRIÈRE-PLAN -->
+      <div class="hero-bg">
+        <img id="heroShoe" src="r1-rouge.jpg" alt="Shoe 3D" />
+      </div>
 
-<section class="hero">
+      <!-- CONTENU -->
+      <div class="hero-content">
+        <h1>STEP INTO THE AURA OF STYLE</h1>
+        <a href="produits.html"><button>BUY NOW</button></a>
 
-  <!-- PAIRE EN ARRIÈRE-PLAN -->
-  <div class="hero-bg">
-    <img id="heroShoe" src="r1-rouge.jpg" alt="Shoe 3D">
-  </div>
+        <!-- CHOIX DES COULEURS -->
+        <div class="color-selector">
+          <span
+            class="color-dot active"
+            data-color="white"
+            style="background: #ffffff"
+          ></span>
+          <span
+            class="color-dot"
+            data-color="black"
+            style="background: #111111"
+          ></span>
+          <span
+            class="color-dot"
+            data-color="blue"
+            style="background: #3b82f6"
+          ></span>
+        </div>
+      </div>
+    </section>
 
-  <!-- CONTENU -->
-  <div class="hero-content">
-    <h1>STEP INTO THE AURA OF STYLE</h1>
-    <a href="produits.html"><button>BUY NOW</button></a>
-    
+    <!-- SECTION PRODUITS 1 -->
+    <section class="featured-products">
+      <h2>Les plus sauvegardés</h2>
+      <div class="product-carousel">
+        <div class="product-card">
+          <a href="produits.html"
+            ><img src="air-max.jpg" alt="Trench ASOS"
+          /></a>
+          <p>La paire de Air-max-plus-triple-foul black</p>
+          <span class="old-price">74,99 €</span>
+          <span class="new-price">63,74 €</span>
+        </div>
+        <div class="product-card">
+          <a href="produits.html"
+            ><img src="RF1BLACK.jpeg" alt="Veste Only & Sons"
+          /></a>
+          <p>ONLY & SONS - Veste de travail épaisse</p>
+          <span class="old-price">70,99 €</span>
+          <span class="new-price">21,29 €</span>
+        </div>
+        <div class="product-card">
+          <a href="produits.html"
+            ><img src="R1.jpg" alt="Doudoune Jack & Jones"
+          /></a>
+          <p>Jack & Jones - Doudoune Noir et gris</p>
+          <span class="old-price">49,99 €</span>
+          <span class="new-price">22,49 €</span>
+        </div>
+        <div class="product-card">
+          <a href="produits.html"
+            ><img src="j-1-retro.jpg" alt="Trench Topman"
+          /></a>
+          <p>Topman - Trench-coat en coton - Taupe</p>
+          <span class="old-price">91,99 €</span>
+          <span class="new-price">82,79 €</span>
+        </div>
+      </div>
+      <a href="produits.html"><button class="shop-btn">SHOPPER</button></a>
+    </section>
 
-    <!-- CHOIX DES COULEURS -->
-    <div class="color-selector">
-      <span class="color-dot active" data-color="white" style="background:#ffffff"></span>
-      <span class="color-dot" data-color="black" style="background:#111111"></span>
-      <span class="color-dot" data-color="blue" style="background:#3b82f6"></span>
-    </div>
-  </div>
+    <!-- SECTION PRODUITS 2 -->
+    <section class="featured-products">
+      <h2>Les plus sauvegardés</h2>
+      <div class="product-carousel">
+        <div class="product-card">
+          <a href="produits.html"
+            ><img src="air-max95.jpg" alt="Trench ASOS"
+          /></a>
+          <p>ASOS DESIGN - Trench-coat oversize - Bleu marine</p>
+          <span class="old-price">74,99 €</span>
+          <span class="new-price">63,74 €</span>
+        </div>
+        <div class="product-card">
+          <a href="produits.html"
+            ><img src="J3.webp" alt="Veste Only & Sons"
+          /></a>
+          <p>ONLY & SONS - Veste de travail épaisse</p>
+          <span class="old-price">70,99 €</span>
+          <span class="new-price">21,29 €</span>
+        </div>
+        <div class="product-card">
+          <a href="produits.html"
+            ><img src="NB.jpg" alt="Doudoune Jack & Jones"
+          /></a>
+          <p>Jack & Jones - Doudoune Noir et gris</p>
+          <span class="old-price">49,99 €</span>
+          <span class="new-price">22,49 €</span>
+        </div>
+        <div class="product-card">
+          <a href="produits.html"><img src="ar-4.jpg" alt="Trench Topman" /></a>
+          <p>Topman - Trench-coat en coton - Taupe</p>
+          <span class="old-price">91,99 €</span>
+          <span class="new-price">82,79 €</span>
+        </div>
+      </div>
+      <button class="shop-btn">SHOPPER</button>
+    </section>
 
-<script src="index.js"></script>
+    <!-- LOGOS DES MARQUES -->
+    <section class="brand-logos">
+      <h2>Shopper par marque</h2>
+      <div class="logos">
+        <img src="logo-adidas.jpg" alt="Adidas" />
+        <img src="logo-asics.jpg" alt="Asics" />
+        <img src="logo-nike.jpg" alt="Nike" />
+        <img src="logo-timberland.jpg" alt="Timberland" />
+        <img src="logo-puma.jpg" alt="Puma" />
+        <img src="logo-NBalance.jpg" alt="New Balance" />
+      </div>
+    </section>
+
 </body>
 
- <section class="featured-products">
-  <!-- Les plus sauvegardés -->
-  <h2>Les plus sauvegardés</h2>
-  <div class="product-carousel">
-    <div class="product-card">
-      <img src="images/trench1.jpg" alt="Trench ASOS">
-      <p>ASOS DESIGN - Trench-coat oversize - Bleu marine</p>
-      <span class="old-price">74,99 €</span>
-      <span class="new-price">63,74 €</span>
-    </div>
-    <div class="product-card">
-      <img src="images/jacket1.jpg" alt="Veste Only & Sons">
-      <p>ONLY & SONS - Veste de travail épaisse</p>
-      <span class="old-price">70,99 €</span>
-      <span class="new-price">21,29 €</span>
-    </div>
-    <div class="product-card">
-      <img src="images/doudoune1.jpg" alt="Doudoune Jack & Jones">
-      <p>Jack & Jones - Doudoune Noir et gris</p>
-      <span class="old-price">49,99 €</span>
-      <span class="new-price">22,49 €</span>
-    </div>
-    <div class="product-card">
-      <img src="images/trench2.jpg" alt="Trench Topman">
-      <p>Topman - Trench-coat en coton - Taupe</p>
-      <span class="old-price">91,99 €</span>
-      <span class="new-price">82,79 €</span>
-    </div>
-  </div>
-  <button class="shop-btn">SHOPPER</button>
-</section>
+    <footer class="footer">
 
-<!-- Logos marques -->
-<section class="brand-logos">
-  <h2>Shopper par marque</h2>
-  <div class="logos">
-    <img src="images/adidas.png" alt="Adidas">
-    <img src="images/jackjones.png" alt="Jack & Jones">
-    <img src="images/nike.png" alt="Nike">
-    <img src="images/onlysons.png" alt="Only & Sons">
-    <img src="images/puma.png" alt="Puma">
-    <img src="images/newbalance.png" alt="New Balance">
+  <!-- TOP CATEGORIES -->
+  <div class="footer-top">
+    <h3>TOP DES CATÉGORIES CHAUSSURES</h3>
+
+    <div class="footer-categories">
+      <ul>
+        <li>Baskets pour homme</li>
+        <li>Baskets pour femme</li>
+        <li>Baskets streetwear</li>
+        <li>Chaussures de sport</li>
+        <li>Chaussures running</li>
+        <li>Chaussures lifestyle</li>
+        <li>Baskets montantes</li>
+        <li>Baskets basses</li>
+        <li>Sandales & claquettes</li>
+        <li>Chaussures casual</li>
+      </ul>
+
+      <ul>
+        <li>Nike</li>
+        <li>Adidas</li>
+        <li>Puma</li>
+        <li>New Balance</li>
+        <li>Jordan</li>
+        <li>Reebok</li>
+        <li>Vans</li>
+        <li>Converse</li>
+        <li>Under Armour</li>
+        <li>Asics</li>
+      </ul>
+
+      <ul>
+        <li>Baskets blanches</li>
+        <li>Baskets noires</li>
+        <li>Baskets colorées</li>
+        <li>Baskets en cuir</li>
+        <li>Baskets respirantes</li>
+        <li>Baskets sport indoor</li>
+        <li>Baskets outdoor</li>
+        <li>Chaussures training</li>
+        <li>Chaussures basketball</li>
+        <li>Chaussures football</li>
+      </ul>
+
+      <ul>
+        <li>Accessoires chaussures</li>
+        <li>Lacets</li>
+        <li>Produits d’entretien</li>
+        <li>Sacs de sport</li>
+        <li>Chaussettes sport</li>
+        <li>Nouveautés</li>
+        <li>Meilleures ventes</li>
+        <li>Promotions</li>
+        <li>Cartes cadeaux</li>
+      </ul>
+    </div>
+
+    <p class="footer-description">
+      Découvre les meilleures baskets et chaussures tendance sur <strong>Stepora Shoes</strong>.
+      Du streetwear au sport, nous sélectionnons des modèles stylés, confortables et durables
+      pour t’accompagner au quotidien. Que tu sois fan de sneakers iconiques ou de chaussures
+      performantes, trouve la paire parfaite et fais passer ton style au niveau supérieur.
+    </p>
   </div>
-</section>
+
+
+<div class="footer-socials">
+  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="#" aria-label="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+  
+  <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+  <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+  <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+</div>
+
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+
+    <div class="footer-column">
+      <h4>AIDE & INFORMATIONS</h4>
+      <ul>
+        <li>Assistance client</li>
+        <li>Suivi de commande</li>
+        <li>Livraison & retours</li>
+        <li>Modes de paiement</li>
+        <li>FAQ</li>
+        <li>Plan du site</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>À PROPOS DE STEPORA</h4>
+      <ul>
+        <li>Qui sommes-nous ?</li>
+        <li>Nos valeurs</li>
+        <li>Nos partenaires</li>
+        <li>Carrières</li>
+        <li>Responsabilité & éthique</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>ENCORE PLUS</h4>
+      <ul>
+        <li>Application mobile</li>
+        <li>Cartes cadeaux</li>
+        <li>Offres spéciales</li>
+        <li>Soldes</li>
+        <li>Black Friday</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>SÉLECTIONNEZ LE PAYS</h4>
+      <p>Vous êtes en 🇨🇩 RDC</p>
+      <a href="#" class="change-country">CHANGER</a>
+    </div>
+
+  </div>
+
+  <div class="footer-copy">
+    © 2026 Stepora Shoes — Tous droits réservés
+  </div>
+
+</footer>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+    <script src="index.js"></script>
+
 </html>
