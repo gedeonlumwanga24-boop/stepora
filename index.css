@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
@@ -21,7 +21,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
   z-index: 100;
 }
 
@@ -53,7 +53,7 @@ body {
   overflow: hidden;
 
   /* aura variable */
-  --aura-color: rgba(255,255,255,0.25);
+  --aura-color: rgba(255, 255, 255, 0.25);
 }
 
 /* AURA */
@@ -111,17 +111,11 @@ body {
   width: 1100px;
   opacity: 0.95;
 
-  transform:
-    perspective(1200px)
-    rotateX(12deg)
-    rotateY(-18deg)
-    translateY(40px);
+  transform: perspective(1200px) rotateX(12deg) rotateY(-18deg) translateY(40px);
 
-  filter: drop-shadow(0 60px 80px rgba(0,0,0,0.65));
+  filter: drop-shadow(0 60px 80px rgba(0, 0, 0, 0.65));
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
-
-
 
 /* Bouton BUY NOW */
 .hero-content button {
@@ -139,13 +133,13 @@ body {
 /* Effet hover */
 .hero-content button:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Effet clic */
 .hero-content button:active {
   transform: scale(0.95);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Points de couleur */
@@ -165,7 +159,6 @@ body {
   border: 2px solid #000;
 }
 
-
 /* COLOR SELECTOR */
 .color-selector {
   display: flex;
@@ -178,7 +171,7 @@ body {
   height: 18px;
   border-radius: 50%;
   cursor: pointer;
-  border: 2px solid rgba(255,255,255,0.4);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   transition: transform 0.2s ease, border 0.2s ease;
 }
 
@@ -200,46 +193,213 @@ body {
   margin-bottom: 50px;
 }
 
-.cards {
-  display: flex;
-  gap: 40px;
+.featured-products {
+  padding: 50px 20px;
+  text-align: center;
 }
 
-/* PRODUCT CARD */
+.featured-products h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.product-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
 .product-card {
-  width: 260px;
-  background: white;
-  border-radius: 22px;
-  padding: 22px;
-  text-align: center;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  cursor: pointer;
+  min-width: 200px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
 }
 
 .product-card img {
   width: 100%;
-  transition: transform 0.35s ease;
+  border-radius: 5px;
+}
+.product-card p {
+  font-size: 0.9rem;
+  margin: 10px 0 5px;
+}
+
+.product-card .old-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 10px;
+}
+
+.product-card .new-price {
+  font-weight: 600;
+  color: #c1272d; /* rouge pour promo */
+}
+
+.shop-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.shop-btn:hover {
+  background-color: #333;
+}
+
+.product-card {
+  min-width: 200px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+  overflow: hidden; /* empêche tout débordement */
+}
+
+/* CONTENEUR IMAGE */
+.product-card img {
+  width: 100%;
+  height: 180px; /* hauteur fixe */
+  object-fit: cover; /* redimensionne sans déformer */
+  border-radius: 5px;
+  display: block;
+}
+
+.product-card {
+  position: relative;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.product-card img {
+  transition: transform 0.6s ease;
+}
+
+/* HOVER desktop */
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
 
 .product-card:hover img {
-  transform: scale(0.9);
+  transform: scale(1.08);
 }
 
-.product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+/* TOUCH mobile */
+.product-card:active img {
+  transform: scale(1.12);
 }
 
-.product-card p {
-  margin-top: 16px;
-  font-weight: 600;
+/* Logos des marques */
+.brand-logos {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.brand-logos h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.brand-logos .logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.brand-logos .logos img {
+  max-height: 50px;
+  object-fit: contain;
+}
+
+/* =======================
+   Base styles (déjà existants)
+======================= */
+
+/* ... ton code actuel ... */
+
+/* =======================
+   Optimisation mobile
+======================= */
+@media (max-width: 768px) {
+  .featured-products {
+    padding: 30px 10px;
+  }
+
+  .featured-products h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .product-carousel {
+    gap: 15px;
+    padding-bottom: 15px;
+  }
+
+  .product-card {
+    min-width: 160px;
+    padding: 8px;
+  }
+
+  .product-card p {
+    font-size: 0.85rem;
+    margin: 8px 0 4px;
+  }
+
+  .shop-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .brand-logos {
+    padding: 30px 10px;
+  }
+
+  .brand-logos h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .brand-logos .logos {
+    gap: 20px;
+  }
+
+  .brand-logos .logos img {
+    max-height: 40px;
+  }
+}
+
+/* Pour très petits écrans (smartphones < 400px) */
+@media (max-width: 400px) {
+  .product-card {
+    min-width: 140px;
+  }
+
+  .featured-products h2,
+  .brand-logos h2 {
+    font-size: 1.1rem;
+  }
+
+  .shop-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
 }
 
 /* ===================== */
 /* RESPONSIVE MOBILE */
 /* ===================== */
 @media (max-width: 900px) {
-
   .navbar {
     padding: 18px 30px;
   }
@@ -258,11 +418,7 @@ body {
   .hero-bg img {
     width: 720px;
     opacity: 0.75;
-    transform:
-      perspective(900px)
-      rotateX(8deg)
-      rotateY(-10deg)
-      translateY(20px);
+    transform: perspective(900px) rotateX(8deg) rotateY(-10deg) translateY(20px);
   }
 
   .hero::after {
