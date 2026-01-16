@@ -101,3 +101,37 @@ document.addEventListener("mousemove", (e) => {
     translateY(40px)
   `;
 });
+
+
+
+
+// Valeurs initiales pour la rotation
+let rotateX = 12;
+let rotateY = -18;
+
+// Mouvement 3D automatique (respiration subtile)
+let angle = 0;
+function autoRotate() {
+  angle += 0.03; // vitesse de rotation automatique
+  const autoX = Math.sin(angle) * 3; // amplitude X
+  const autoY = Math.cos(angle) * 3; // amplitude Y
+
+  shoe.style.transform = `
+    perspective(1200px)
+    rotateX(${rotateX + autoX}deg)
+    rotateY(${rotateY + autoY}deg)
+    translateY(40px)
+  `;
+  requestAnimationFrame(autoRotate);
+}
+autoRotate();
+
+// Effet supplémentaire quand la souris bouge
+document.addEventListener("mousemove", (e) => {
+  const x = (window.innerWidth / 2 - e.clientX) / 40;
+  const y = (window.innerHeight / 2 - e.clientY) / 40;
+
+  rotateX = 12 + y;
+  rotateY = -18 + x;
+});
+
