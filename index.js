@@ -103,9 +103,7 @@ document.addEventListener("mousemove", (e) => {
 });
 
 
-
-
-// Valeurs initiales pour la rotation
+  // Valeurs initiales pour la rotation
 let rotateX = 12;
 let rotateY = -18;
 
@@ -134,4 +132,6 @@ document.addEventListener("mousemove", (e) => {
   rotateX = 12 + y;
   rotateY = -18 + x;
 });
+
+
 
