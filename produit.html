@@ -1,41 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Produit | Stepora</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="produit.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="produit.css" />
 </head>
 <body>
 
 <main class="product-page">
 
-  <!-- LEFT : IMAGE -->
-  <div class="product-gallery">
+  <!-- LEFT : GALLERY -->
+  <section class="product-gallery">
     <span class="badge">⭐ Bien noté</span>
 
-    <img id="mainImage" src="images/shoe1.jpg" alt="Chaussure">
-
+    <img id="mainImage" src="" alt="Produit Stepora">
 
     <div class="gallery-nav">
-      <button onclick="prevImage()">‹</button>
-      <button onclick="nextImage()">›</button>
+      <button id="prevBtn">‹</button>
+      <button id="nextBtn">›</button>
     </div>
-  </div>
 
-  <!-- RIGHT : INFOS -->
-  <div class="product-details"></div>
+    <div class="thumbnails" id="thumbnails"></div>
+  </section>
 
-    <h1>Nike ZoomX Running</h1>
-    <p class="price">179,99 €</p>
+  <!-- RIGHT : DETAILS -->
+  <section class="product-details">
 
-    <!-- THUMBNAILS -->
-    <div class="thumbnails">
-      <img src="images/shoe1.jpg" onclick="changeImage(this)">
-      <img src="images/shoe2.jpg" onclick="changeImage(this)">
-      <img src="images/shoe3.jpg" onclick="changeImage(this)">
-      <img src="images/shoe4.jpg" onclick="changeImage(this)">
-    </div>
+    <h1 id="productName"></h1>
+    <p class="price" id="productPrice"></p>
 
     <div class="custom">
       🎨 Créer votre propre modèle
@@ -47,30 +40,17 @@
       <span>📏 Guide des tailles</span>
     </div>
 
-    <div class="sizes">
-      <button>US 6</button>
-      <button>US 6.5</button>
-      <button>US 7</button>
-      <button>US 7.5</button>
-      <button>US 8</button>
-      <button>US 8.5</button>
-      <button>US 9</button>
-      <button>US 9.5</button>
-      <button>US 10</button>
-      <button>US 10.5</button>
-      <button>US 11</button>
-      <button>US 12</button>
-      <button>US 13</button>
-    </div>
+    <div class="sizes" id="sizes"></div>
 
-    <!-- CTA -->
-    <button class="add-to-cart">Ajouter au panier</button>
+    <button class="add-to-cart" id="addToCart">
+      Ajouter au panier
+    </button>
 
-  </div>
+  </section>
 
 </main>
 
-<script src="produit.js"></script>
 <script src="data.js"></script>
+<script src="produit.js"></script>
 </body>
 </html>

@@ -1,114 +1,147 @@
-const images = [
-  "R1.jpg",
-  "R1.jpg",
-  "i.jpg",
-  "images/shoe4.jpg"
-];
+/* ===============================
+   RÉCUPÉRATION ID PRODUIT
+================================ */
+const params = new URLSearchParams(window.location.search);
+const productId = params.get("id");
 
-let index = 0;
+/* ===============================
+   ÉLÉMENTS DOM
+================================ */
 const mainImage = document.getElementById("mainImage");
+const thumbnailsContainer = document.getElementById("thumbnails");
+const productName = document.getElementById("productName");
+const productPrice = document.getElementById("productPrice");
+const sizesContainer = document.getElementById("sizes");
+const addToCartBtn = document.getElementById("addToCart");
 
-/* GALLERY */
-function changeImage(el) {
-  mainImage.src = el.src;
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+/* ===============================
+   VARIABLES
+================================ */
+let currentImageIndex = 0;
+let selectedSize = null;
+let currentProduct = null;
+
+/* ===============================
+   CHARGEMENT PRODUIT
+================================ */
+function loadProduct() {
+  if (!productId) {
+    alert("Produit introuvable");
+    return;
+  }
+
+  currentProduct = products.find(p => p.id == productId);
+
+  if (!currentProduct) {
+    alert("Produit non trouvé");
+    return;
+  }
+
+  // Infos produit
+  productName.textContent = currentProduct.name;
+  productPrice.textContent = `${currentProduct.price} €`;
+
+  // Image principale
+  mainImage.src = currentProduct.images[0];
+
+  // Thumbnails
+  thumbnailsContainer.innerHTML = "";
+  currentProduct.images.forEach((img, index) => {
+    const thumb = document.createElement("img");
+    thumb.src = img;
+    thumb.classList.toggle("active", index === 0);
+    thumb.addEventListener("click", () => changeImage(index));
+    thumbnailsContainer.appendChild(thumb);
+  });
+
+  // Tailles
+  sizesContainer.innerHTML = "";
+  currentProduct.sizes.forEach(size => {
+    const btn = document.createElement("button");
+    btn.textContent = size;
+    btn.addEventListener("click", () => selectSize(btn, size));
+    sizesContainer.appendChild(btn);
+  });
+}
+
+/* ===============================
+   GALERIE IMAGES
+================================ */
+function changeImage(index) {
+  currentImageIndex = index;
+  mainImage.src = currentProduct.images[index];
+
+  document.querySelectorAll(".thumbnails img").forEach((img, i) => {
+    img.classList.toggle("active", i === index);
+  });
 }
 
 function nextImage() {
-  index = (index + 1) % images.length;
-  mainImage.src = images[index];
+  currentImageIndex =
+    (currentImageIndex + 1) % currentProduct.images.length;
+  changeImage(currentImageIndex);
 }
 
 function prevImage() {
-  index = (index - 1 + images.length) % images.length;
-  mainImage.src = images[index];
+  currentImageIndex =
+    (currentImageIndex - 1 + currentProduct.images.length) %
+    currentProduct.images.length;
+  changeImage(currentImageIndex);
 }
 
-/* SIZE SELECT */
-document.querySelectorAll(".sizes button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".sizes button")
-      .forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-  });
-});
+/* ===============================
+   SÉLECTION TAILLE
+================================ */
+function selectSize(button, size) {
+  document.querySelectorAll(".sizes button").forEach(btn =>
+    btn.classList.remove("active")
+  );
 
-/* CART */
-document.querySelector(".add-to-cart").addEventListener("click", () => {
-  const selected = document.querySelector(".sizes button.active");
-  if (!selected) {
+  button.classList.add("active");
+  selectedSize = size;
+}
+
+/* ===============================
+   AJOUT AU PANIER
+================================ */
+addToCartBtn.addEventListener("click", () => {
+  if (!selectedSize) {
     alert("Veuillez sélectionner une taille");
     return;
   }
-  alert("Ajouté au panier ✔");
-});
 
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-document.querySelector("h1").textContent = product.name;
-document.querySelector(".price").textContent = product.price + " €";
+  cart.push({
+    id: currentProduct.id,
+    name: currentProduct.name,
+    price: currentProduct.price,
+    image: currentProduct.images[0],
+    size: selectedSize,
+    quantity: 1
+  });
 
-
-
-/* THUMBNAILS */
-const thumbnails = document.querySelector(".thumbnails");
-thumbnails.innerHTML = "";
-
-product.images.forEach(img => {
-  thumbnails.innerHTML += `
-    <img src="${img}" onclick="changeImage(this)">
-  `;
-});
-
-/* SIZES */
-const sizesContainer = document.querySelector(".sizes");
-sizesContainer.innerHTML = "";
-
-product.sizes.forEach(size => {
-  sizesContainer.innerHTML += `<button>${size}</button>`;
-});
-
-
-document.addEventListener("click", e => {
-  if (e.target.parentElement.classList.contains("sizes")) {
-    document.querySelectorAll(".sizes button")
-      .forEach(b => b.classList.remove("active"));
-    e.target.classList.add("active");
-  }
-});
-
-
-document.querySelector(".add-to-cart").addEventListener("click", () => {
-  const size = document.querySelector(".sizes button.active");
-  if (!size) {
-    alert("Choisissez une taille");
-    return;
-  }
-
-  const cartItem = {
-    id: product.id,
-    name: product.name,
-    price: product.price,
-    size: size.textContent,
-    image: product.images[0],
-    qty: 1
-  };
-
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push(cartItem);
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  alert("Produit ajouté au panier ✔");
+  addToCartBtn.textContent = "✔ Ajouté";
+  addToCartBtn.disabled = true;
+
+  setTimeout(() => {
+    addToCartBtn.textContent = "Ajouter au panier";
+    addToCartBtn.disabled = false;
+  }, 1500);
 });
 
+/* ===============================
+   EVENTS
+================================ */
+nextBtn.addEventListener("click", nextImage);
+prevBtn.addEventListener("click", prevImage);
 
-/* GET ID FROM URL */
-const params = new URLSearchParams(window.location.search);
-const productId = parseInt(params.get("id"));
-
-/* FIND PRODUCT */
-const product = PRODUCTS.find(p => p.id === productId);
-
-if (!product) {
-  document.body.innerHTML = "<h2>Produit introuvable</h2>";
-}
-
-
+/* ===============================
+   INIT
+================================ */
+loadProduct();

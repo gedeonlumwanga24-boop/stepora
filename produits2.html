@@ -1,58 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Stepora – Produits</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="PRODUITS2.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stepora – Produits</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="PRODUITS2.css" />
+  </head>
+  <body>
+    <!-- SEARCH -->
+    <header class="search-container">
+      <input type="text" id="searchInput" placeholder="Rechercher une paire" />
+    </header>
 
-<!-- SEARCH -->
-<header class="search-container">
-  <input type="text" id="searchInput" placeholder="Rechercher une paire">
-</header>
+    <!-- PRODUITS -->
+    <main class="products-wrapper">
+      <section>
+        <h2>🆕 Les plus récents</h2>
+        <div class="products-grid" id="recent"></div>
+      </section>
 
-<!-- PRODUITS -->
-<main class="products-wrapper">
+      <section>
+        <h2>🔥 Les plus likés</h2>
+        <div class="products-grid" id="liked"></div>
+      </section>
 
-  <section>
-    <h2>🆕 Les plus récents</h2>
-    <div class="products-grid" id="recent"></div>
-  </section>
+      <section>
+        <h2>💸 Meilleurs prix</h2>
+        <div class="products-grid" id="cheap"></div>
+      </section>
 
-  <section>
-    <h2>🔥 Les plus likés</h2>
-    <div class="products-grid" id="liked"></div>
-  </section>
+      <section>
+        <h2>👟 Sneakers</h2>
+        <div class="products-grid" id="sneakers"></div>
+      </section>
 
-  <section>
-    <h2>💸 Meilleurs prix</h2>
-    <div class="products-grid" id="cheap"></div>
-  </section>
+      <section>
+        <h2>🥿 Mocassins</h2>
+        <div class="products-grid" id="mocassins"></div>
+      </section>
 
-  <section>
-    <h2>👟 Sneakers</h2>
-    <div class="products-grid" id="sneakers"></div>
-  </section>
+      <section>
+        <h2>🥿 Baskets</h2>
+        <div class="products-grid" id="Baskets"></div>
+      </section>
 
-  <section>
-    <h2>🥿 Mocassins</h2>
-    <div class="products-grid" id="mocassins"></div>
-  </section>
+      <section>
+        <h2>🥿 Timberland</h2>
+        <div class="products-grid" id="Timberland"></div>
+      </section>
+    </main>
 
-    <section>
-    <h2>🥿 Baskets</h2>
-    <div class="products-grid" id="Baskets"></div>
-  </section>
-
-    <section>
-    <h2>🥿 Timberland</h2>
-    <div class="products-grid" id="Timberland"></div>
-  </section>
-</main>
-
-<script src="produits2.js"></script>
-<script src="data.js"></script>
-</body>
+    <script src="data.js"></script>
+    <script src="produits2.js"></script>
+  </body>
 </html>
