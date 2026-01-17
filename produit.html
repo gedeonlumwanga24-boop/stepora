@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Produit | Stepora</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="produit.css">
+</head>
+<body>
+
+<main class="product-page">
+
+  <!-- LEFT : IMAGE -->
+  <div class="product-gallery">
+    <span class="badge">⭐ Bien noté</span>
+
+    <img id="mainImage" src="images/shoe1.jpg" alt="Chaussure">
+
+
+    <div class="gallery-nav">
+      <button onclick="prevImage()">‹</button>
+      <button onclick="nextImage()">›</button>
+    </div>
+  </div>
+
+  <!-- RIGHT : INFOS -->
+  <div class="product-details"></div>
+
+    <h1>Nike ZoomX Running</h1>
+    <p class="price">179,99 €</p>
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnails">
+      <img src="images/shoe1.jpg" onclick="changeImage(this)">
+      <img src="images/shoe2.jpg" onclick="changeImage(this)">
+      <img src="images/shoe3.jpg" onclick="changeImage(this)">
+      <img src="images/shoe4.jpg" onclick="changeImage(this)">
+    </div>
+
+    <div class="custom">
+      🎨 Créer votre propre modèle
+    </div>
+
+    <!-- SIZES -->
+    <div class="sizes-header">
+      <h3>Sélectionner la taille</h3>
+      <span>📏 Guide des tailles</span>
+    </div>
+
+    <div class="sizes">
+      <button>US 6</button>
+      <button>US 6.5</button>
+      <button>US 7</button>
+      <button>US 7.5</button>
+      <button>US 8</button>
+      <button>US 8.5</button>
+      <button>US 9</button>
+      <button>US 9.5</button>
+      <button>US 10</button>
+      <button>US 10.5</button>
+      <button>US 11</button>
+      <button>US 12</button>
+      <button>US 13</button>
+    </div>
+
+    <!-- CTA -->
+    <button class="add-to-cart">Ajouter au panier</button>
+
+  </div>
+
+</main>
+
+<script src="produit.js"></script>
+<script src="data.js"></script>
+</body>
+</html>

@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="PRODUITS2.css">
   </head>
 
   <body>
@@ -62,83 +63,40 @@
       <a href="contact.html">Contact</a>
     </div>
 
-    <!-- SECTION PRODUITS 1 -->
-    <section class="featured-products">
-      <h2>Les plus sauvegardés</h2>
-      <div class="product-carousel">
-        <div class="product-card">
-          <a href="produits.html"
-            ><img src="air-max.jpg" alt="Trench ASOS"
-          /></a>
-          <p>La paire de Air-max-plus-triple-foul black</p>
-          <span class="old-price">74,99 €</span>
-          <span class="new-price">63,74 €</span>
-        </div>
-        <div class="product-card">
-          <a href="produits.html"
-            ><img src="RF1BLACK.jpeg" alt="Veste Only & Sons"
-          /></a>
-          <p>ONLY & SONS - Veste de travail épaisse</p>
-          <span class="old-price">70,99 €</span>
-          <span class="new-price">21,29 €</span>
-        </div>
-        <div class="product-card">
-          <a href="produits.html"
-            ><img src="R1.jpg" alt="Doudoune Jack & Jones"
-          /></a>
-          <p>Jack & Jones - Doudoune Noir et gris</p>
-          <span class="old-price">49,99 €</span>
-          <span class="new-price">22,49 €</span>
-        </div>
-        <div class="product-card">
-          <a href="produits.html"
-            ><img src="j-1-retro.jpg" alt="Trench Topman"
-          /></a>
-          <p>Topman - Trench-coat en coton - Taupe</p>
-          <span class="old-price">91,99 €</span>
-          <span class="new-price">82,79 €</span>
-        </div>
-      </div>
-      <a href="produits.html"><button class="shop-btn">SHOPPER</button></a>
-    </section>
+   <!-- SEARCH -->
+<header class="search-container">
+  <input type="text" id="searchInput" placeholder="Rechercher une paire">
+</header>
 
-    <!-- SECTION PRODUITS 2 -->
-    <section class="featured-products">
-      <h2>Les plus sauvegardés</h2>
-      <div class="product-carousel">
-        <div class="product-card">
-          <a href="produits.html"
-            ><img src="air-max95.jpg" alt="Trench ASOS"
-          /></a>
-          <p>ASOS DESIGN - Trench-coat oversize - Bleu marine</p>
-          <span class="old-price">74,99 €</span>
-          <span class="new-price">63,74 €</span>
-        </div>
-        <div class="product-card">
-          <a href="produits.html"
-            ><img src="J3.webp" alt="Veste Only & Sons"
-          /></a>
-          <p>ONLY & SONS - Veste de travail épaisse</p>
-          <span class="old-price">70,99 €</span>
-          <span class="new-price">21,29 €</span>
-        </div>
-        <div class="product-card">
-          <a href="produits.html"
-            ><img src="NB.jpg" alt="Doudoune Jack & Jones"
-          /></a>
-          <p>Jack & Jones - Doudoune Noir et gris</p>
-          <span class="old-price">49,99 €</span>
-          <span class="new-price">22,49 €</span>
-        </div>
-        <div class="product-card">
-          <a href="produits.html"><img src="ar-4.jpg" alt="Trench Topman" /></a>
-          <p>Topman - Trench-coat en coton - Taupe</p>
-          <span class="old-price">91,99 €</span>
-          <span class="new-price">82,79 €</span>
-        </div>
-      </div>
-      <button class="shop-btn">SHOPPER</button>
-    </section>
+<!-- PRODUITS -->
+<main class="products-wrapper">
+
+  <section>
+    <h2>🆕 Les plus récents</h2>
+    <div class="products-grid" id="recent"></div>
+  </section>
+
+  <section>
+    <h2>🔥 Les plus likés</h2>
+    <div class="products-grid" id="liked"></div>
+  </section>
+
+  <section>
+    <h2>💸 Meilleurs prix</h2>
+    <div class="products-grid" id="cheap"></div>
+  </section>
+
+  <section>
+    <h2>👟 Sneakers</h2>
+    <div class="products-grid" id="sneakers"></div>
+  </section>
+
+  <section>
+    <h2>🥿 Mocassins</h2>
+    <div class="products-grid" id="mocassins"></div>
+  </section>
+
+<script src="produits2.js"></script> 
 
     <!-- LOGOS DES MARQUES -->
     <section class="brand-logos">
