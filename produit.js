@@ -1,3 +1,4 @@
+
 /* ===============================
    RÉCUPÉRATION ID PRODUIT
 ================================ */
@@ -13,7 +14,6 @@ const productName = document.getElementById("productName");
 const productPrice = document.getElementById("productPrice");
 const sizesContainer = document.getElementById("sizes");
 const addToCartBtn = document.getElementById("addToCart");
-
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 
@@ -34,7 +34,6 @@ function loadProduct() {
   }
 
   currentProduct = products.find(p => p.id == productId);
-
   if (!currentProduct) {
     alert("Produit non trouvé");
     return;
@@ -53,6 +52,7 @@ function loadProduct() {
     const thumb = document.createElement("img");
     thumb.src = img;
     thumb.classList.toggle("active", index === 0);
+    thumb.setAttribute("tabindex", 0); // accessible clavier
     thumb.addEventListener("click", () => changeImage(index));
     thumbnailsContainer.appendChild(thumb);
   });
@@ -62,6 +62,7 @@ function loadProduct() {
   currentProduct.sizes.forEach(size => {
     const btn = document.createElement("button");
     btn.textContent = size;
+    btn.setAttribute("tabindex", 0); // accessible clavier
     btn.addEventListener("click", () => selectSize(btn, size));
     sizesContainer.appendChild(btn);
   });
@@ -73,22 +74,19 @@ function loadProduct() {
 function changeImage(index) {
   currentImageIndex = index;
   mainImage.src = currentProduct.images[index];
-
   document.querySelectorAll(".thumbnails img").forEach((img, i) => {
     img.classList.toggle("active", i === index);
   });
 }
 
 function nextImage() {
-  currentImageIndex =
-    (currentImageIndex + 1) % currentProduct.images.length;
+  currentImageIndex = (currentImageIndex + 1) % currentProduct.images.length;
   changeImage(currentImageIndex);
 }
 
 function prevImage() {
   currentImageIndex =
-    (currentImageIndex - 1 + currentProduct.images.length) %
-    currentProduct.images.length;
+    (currentImageIndex - 1 + currentProduct.images.length) % currentProduct.images.length;
   changeImage(currentImageIndex);
 }
 
@@ -99,7 +97,6 @@ function selectSize(button, size) {
   document.querySelectorAll(".sizes button").forEach(btn =>
     btn.classList.remove("active")
   );
-
   button.classList.add("active");
   selectedSize = size;
 }
@@ -114,7 +111,6 @@ addToCartBtn.addEventListener("click", () => {
   }
 
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
   cart.push({
     id: currentProduct.id,
     name: currentProduct.name,
@@ -123,12 +119,10 @@ addToCartBtn.addEventListener("click", () => {
     size: selectedSize,
     quantity: 1
   });
-
   localStorage.setItem("cart", JSON.stringify(cart));
 
   addToCartBtn.textContent = "✔ Ajouté";
   addToCartBtn.disabled = true;
-
   setTimeout(() => {
     addToCartBtn.textContent = "Ajouter au panier";
     addToCartBtn.disabled = false;
@@ -140,6 +134,28 @@ addToCartBtn.addEventListener("click", () => {
 ================================ */
 nextBtn.addEventListener("click", nextImage);
 prevBtn.addEventListener("click", prevImage);
+
+/* ===============================
+   NAVIGATION CLAVIER
+================================ */
+document.addEventListener("keydown", (e) => {
+  switch (e.key) {
+    case "ArrowLeft":
+      prevImage();
+      break;
+    case "ArrowRight":
+      nextImage();
+      break;
+    case "Enter":
+    case " ":
+      const active = document.activeElement;
+      if (active.parentElement === sizesContainer || active === addToCartBtn) {
+        active.click();
+        e.preventDefault();
+      }
+      break;
+  }
+});
 
 /* ===============================
    INIT
