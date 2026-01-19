@@ -5,7 +5,7 @@
 const products = [
   {
     id: 1,
-    name: "Nike ZoomX Running",
+    name: " Air Force one Tous categories",
     brand: "Nike",
     category: "running",
     price: 179.99,
@@ -13,10 +13,10 @@ const products = [
     rating: 4.8,
     isNew: true,
     images: [
-      "R1.jpg",
-      "images/R2.jpg",
-      "images/R3.jpg",
-      "images/R4.jpg"
+      "R1-LV.png",
+      "R1-din.png",
+      "R1-LV.png",
+      "R1-FORCE.png",
     ],
     sizes: [
       "US 6","US 6.5","US 7","US 7.5","US 8",
@@ -36,9 +36,10 @@ const products = [
     rating: 4.9,
     isNew: true,
     images: [
-      "images/ultraboost-1.jpg",
-      "images/ultraboost-2.jpg",
-      "images/ultraboost-3.jpg"
+      "AIR JORDAN 1 MID SE(1).png",
+      "AIR JORDAN 1 MID SE.png",
+      "AIR JORDAN 1 MID SE(0).png",
+      "AIR JORDAN 1 MID SE(1).png"
     ],
     sizes: [
       "US 6","US 7","US 8","US 9","US 10","US 11","US 12"
@@ -56,9 +57,10 @@ const products = [
     rating: 5.0,
     isNew: false,
     images: [
-      "images/jordan1-1.jpg",
-      "images/jordan1-2.jpg",
-      "images/jordan1-3.jpg"
+      "AIR JORDAN 4 RETRO OG FC(1).png",
+      "AIR JORDAN 4 RETRO OG FC(0).png",
+      "AIR JORDAN 4 RETRO OG FC.png",
+      "AIR JORDAN 4 RETRO OG FC(0).png"
     ],
     sizes: [
       "US 7","US 8","US 9","US 10","US 11","US 12","US 13"
@@ -76,8 +78,10 @@ const products = [
     rating: 4.5,
     isNew: false,
     images: [
-      "images/puma-rsx-1.jpg",
-      "images/puma-rsx-2.jpg"
+      "W NIKE SHOX TL(1).png",
+      "W NIKE SHOX TL(2).png",
+      "W NIKE SHOX TL(3).png",
+      "W NIKE SHOX TL(1).png"
     ],
     sizes: [
       "US 6","US 7","US 8","US 9","US 10","US 11"
@@ -95,9 +99,10 @@ const products = [
     rating: 4.7,
     isNew: true,
     images: [
-      "images/nb-550-1.jpg",
-      "images/nb-550-2.jpg",
-      "images/nb-550-3.jpg"
+      "new-balance-bleu-blanc.jpg",
+      "new-balance-gris.jpg",
+      "new-balance95.jpg",
+      "new-balance-rose.jpg"
     ],
     sizes: [
       "US 7","US 8","US 9","US 10","US 11","US 12"
@@ -115,9 +120,10 @@ const products = [
     rating: 4.8,
     isNew: false,
     images: [
-      "images/curry-1.jpg",
-      "images/curry-2.jpg",
-      "images/curry-3.jpg"
+      "nocta-blanche.jpg",
+      "nocta-noire.png",
+      "nocta-jaune.jpg",
+      "nocta-noire.png"
     ],
     sizes: [
       "US 7","US 8","US 9","US 10","US 11","US 12","US 13"
@@ -135,14 +141,17 @@ const products = [
     rating: 4.6,
     isNew: false,
     images: [
-      "images/timberland-1.jpg",
-      "images/timberland-2.jpg"
+      "AIR JORDAN 3 RETRO(3).png",
+      "AIR JORDAN 3 RETRO.png",
+      "AIR JORDAN 3 RETRO(0).png",
+      "AIR JORDAN 3 RETRO(3).png"
     ],
     sizes: [
       "US 7","US 8","US 9","US 10","US 11","US 12"
     ],
     description: "Chaussure robuste et élégante pour toutes les saisons."
   }
+
 ];
 
 /* ===============================
