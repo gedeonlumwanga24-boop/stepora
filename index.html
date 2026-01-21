@@ -1,66 +1,123 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stepora Shoes</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stepora Shoes</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="index.css" />
-  </head>
+  <!-- GOOGLE FONT -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+    rel="stylesheet"
+  />
 
-  <body>
-    <header class="main-header">
-      <div class="header-container">
-        <!-- LOGO -->
-        <div class="logo">
-          <a href="#">STEPORA</a>
-        </div>
+  <!-- CSS -->
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="produit.css" />
+</head>
 
-        <!-- NAV DESKTOP -->
-        <nav class="nav-menu">
-          <a href="index.html"><b>Accueil</b></a>
-          <a href="produits2.html"><b>Produits</b></a>
-          <a href="#"><b>Nouveautés</b></a>
-          <a href="contact.html"><b>Contact</b></a>
-        </nav>
+<body>
 
-        <!-- ACTIONS -->
-        <div class="header-actions">
-          <button class="icon-btn" id="searchBtn">🔍</button>
+<!-- ===============================
+     OVERLAY GLOBAL
+================================ -->
+<div class="overlay" id="overlay"></div>
 
-          <button class="icon-btn" id="cartBtn">
-            🛒
-            <span class="cart-count">2</span>
-          </button>
+<!-- ===============================
+     HEADER
+================================ -->
+<header class="main-header">
+  <div class="header-container">
 
-          <button class="menu-toggle" id="menuToggle">☰</button>
-        </div>
-      </div>
-    </header>
-
-    <!-- SEARCH OVERLAY -->
-    <div class="search-overlay" id="searchOverlay">
-      <input type="text" placeholder="Rechercher une paire..." />
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="index.html">STEPORA</a>
     </div>
 
-    <!-- CART PANEL -->
-    <div class="cart-panel" id="cartPanel">
-      <h3>Votre panier</h3>
-      <p>Aucun article pour l’instant</p>
-      <button class="checkout-btn">Commander</button>
-    </div>
+    <!-- NAV DESKTOP -->
+    <nav class="nav-menu">
+      <a href="index.html"><b>Accueil</b></a>
+      <a href="produits2.html"><b>Produits</b></a>
+      <a href="#"><b>Nouveautés</b></a>
+      <a href="contact.html"><b>Contact</b></a>
+    </nav>
 
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Accueil</a>
-      <a href="produits2.html">Produits</a>
-      <a href="#">Nouveautés</a>
-      <a href="contact.html">Contact</a>
+    <!-- ACTIONS -->
+    <div class="header-actions">
+
+      <!-- SEARCH -->
+      <button class="icon-btn" id="searchBtn" aria-label="Recherche">
+        🔍
+      </button>
+
+      <!-- CART -->
+      <button class="icon-btn" id="cartBtn" aria-label="Panier">
+        🛒
+        <span class="cart-count">0</span>
+      </button>
+
+      <!-- MENU MOBILE -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu mobile">
+        ☰
+      </button>
+
     </div>
+  </div>
+</header>
+
+<!-- ===============================
+     SEARCH OVERLAY
+================================ -->
+<div class="search-overlay" id="searchOverlay">
+  <input
+    type="text"
+    placeholder="Rechercher une paire..."
+    aria-label="Recherche produit"
+  />
+</div>
+
+<!-- ===============================
+     CART PANEL
+================================ -->
+<aside class="cart-panel" id="cartPanel">
+
+  <h3>Votre panier</h3>
+
+  <div class="cart-items" id="cartItems">
+    <p class="empty-cart">Aucun article pour l’instant</p>
+  </div>
+
+  <div class="cart-footer">
+    <p>Total :
+      <strong>
+        <span id="cartTotal">0</span> $
+      </strong>
+    </p>
+
+    <button class="checkout-btn" id="checkoutBtn">
+      Commander
+    </button>
+  </div>
+
+</aside>
+
+<!-- ===============================
+     MOBILE MENU
+================================ -->
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Accueil</a>
+  <a href="produits2.html">Produits</a>
+  <a href="#">Nouveautés</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- ===============================
+     JS
+================================ -->
+<script src="header.js"></script>
+
+
+
 
     <section class="hero">
       <!-- PAIRE EN ARRIÈRE-PLAN -->
@@ -334,75 +391,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
-        <script>
-      /* ===== ELEMENTS ===== */
-      const searchBtn = document.getElementById("searchBtn");
-      const searchOverlay = document.getElementById("searchOverlay");
-      const searchInput = searchOverlay.querySelector("input");
-
-      const cartBtn = document.getElementById("cartBtn");
-      const cartPanel = document.getElementById("cartPanel");
-
-      const menuToggle = document.getElementById("menuToggle");
-      const mobileMenu = document.getElementById("mobileMenu");
-
-      /* ===== SEARCH ===== */
-      searchBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        searchOverlay.style.display = "flex";
-        cartPanel.classList.remove("active");
-        mobileMenu.classList.remove("active");
-        searchInput.focus();
-      });
-
-      // clic sur le fond → ferme
-      searchOverlay.addEventListener("click", () => {
-        searchOverlay.style.display = "none";
-      });
-
-      // clic dans l'input → ne ferme pas
-      searchInput.addEventListener("click", (e) => {
-        e.stopPropagation();
-      });
-
-      /* ===== CART ===== */
-      cartBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        cartPanel.classList.toggle("active");
-        searchOverlay.style.display = "none";
-        mobileMenu.classList.remove("active");
-      });
-
-      // clic en dehors du panier → ferme
-      document.addEventListener("click", (e) => {
-        if (!cartPanel.contains(e.target) && !cartBtn.contains(e.target)) {
-          cartPanel.classList.remove("active");
-        }
-      });
-
-      // clic sur bouton ou lien du panier → ferme
-      cartPanel.querySelectorAll("button, a").forEach((el) => {
-        el.addEventListener("click", () => {
-          cartPanel.classList.remove("active");
-        });
-      });
-
-      /* ===== MOBILE MENU ===== */
-      menuToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        mobileMenu.classList.toggle("active");
-        cartPanel.classList.remove("active");
-        searchOverlay.style.display = "none";
-      });
-
-      // clic sur lien du menu → ferme
-      document.querySelectorAll(".mobile-menu a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.remove("active");
-        });
-      });
-    </script>
-    <script src="index.js"></script>
-    <script src="data.js"></script>
-  </body>
+        
+<script src="data.js"></script>
+<script src="produit.js"></script>
+<script src="header.js"></script>
+</body>
 </html>

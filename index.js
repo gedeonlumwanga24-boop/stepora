@@ -134,3 +134,72 @@ document.addEventListener("mousemove", (e) => {
 });
 
 
+
+/* ===============================
+ ELEMENTS ENTETE PANIER RECHERCHE
+================================ */
+
+const searchBtn = document.getElementById("searchBtn");
+const searchOverlay = document.getElementById("searchOverlay");
+
+const cartBtn = document.getElementById("cartBtn");
+const cartPanel = document.getElementById("cartPanel");
+
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+
+/* ===== SEARCH ===== */
+searchBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  searchOverlay.style.display = "flex";
+  cartPanel.classList.remove("active");
+  mobileMenu.classList.remove("active");
+  searchInput.focus();
+});
+
+// clic sur le fond → ferme
+searchOverlay.addEventListener("click", () => {
+  searchOverlay.style.display = "none";
+});
+
+// clic dans l'input → ne ferme pas
+searchInput.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+/* ===== CART ===== */
+cartBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  cartPanel.classList.toggle("active");
+  searchOverlay.style.display = "none";
+  mobileMenu.classList.remove("active");
+});
+
+// clic en dehors du panier → ferme
+document.addEventListener("click", (e) => {
+  if (!cartPanel.contains(e.target) && !cartBtn.contains(e.target)) {
+    cartPanel.classList.remove("active");
+  }
+});
+
+// clic sur bouton ou lien du panier → ferme
+cartPanel.querySelectorAll("button, a").forEach((el) => {
+  el.addEventListener("click", () => {
+    cartPanel.classList.remove("active");
+  });
+});
+
+/* ===== MOBILE MENU ===== */
+menuToggle.addEventListener("click", (e) => {
+  e.stopPropagation();
+  mobileMenu.classList.toggle("active");
+  cartPanel.classList.remove("active");
+  searchOverlay.style.display = "none";
+});
+
+// clic sur lien du menu → ferme
+document.querySelectorAll(".mobile-menu a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+  });
+});

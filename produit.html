@@ -1,62 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Produit | Stepora</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="produit.css" />
+  <title>Stepora Shoes</title>
+
+  <!-- GOOGLE FONT -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
   <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="produit.css" />
 </head>
+
 <body>
 
-      <header class="main-header">
-      <div class="header-container">
-        <!-- LOGO -->
-        <div class="logo">
-          <a href="#">STEPORA</a>
-        </div>
+<!-- ===============================
+     OVERLAY GLOBAL
+================================ -->
+<div class="overlay" id="overlay"></div>
 
-        <!-- NAV DESKTOP -->
-        <nav class="nav-menu">
-          <a href="index.html"><b>Accueil</b></a>
-          <a href="produits2.html"><b>Produits</b></a>
-          <a href="#"><b>Nouveautés</b></a>
-          <a href="contact.html"><b>Contact</b></a>
-        </nav>
+<!-- ===============================
+     HEADER
+================================ -->
+<header class="main-header">
+  <div class="header-container">
 
-        <!-- ACTIONS -->
-        <div class="header-actions">
-          <button class="icon-btn" id="searchBtn">🔍</button>
-
-          <button class="icon-btn" id="cartBtn">
-            🛒
-            <span class="cart-count">2</span>
-          </button>
-
-          <button class="menu-toggle" id="menuToggle">☰</button>
-        </div>
-      </div>
-    </header>
-
-    <!-- SEARCH OVERLAY -->
-    <div class="search-overlay" id="searchOverlay">
-      <input type="text" placeholder="Rechercher une paire..." />
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="index.html">STEPORA</a>
     </div>
 
-    <!-- CART PANEL -->
-    <div class="cart-panel" id="cartPanel">
-      <h3>Votre panier</h3>
-      <p>Aucun article pour l’instant</p>
-      <button class="checkout-btn">Commander</button>
-    </div>
-
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
+    <!-- NAV DESKTOP -->
+    <nav class="nav-menu">
       <a href="index.html"><b>Accueil</b></a>
       <a href="produits2.html"><b>Produits</b></a>
       <a href="#"><b>Nouveautés</b></a>
       <a href="contact.html"><b>Contact</b></a>
+    </nav>
+
+    <!-- ACTIONS -->
+    <div class="header-actions">
+
+      <!-- SEARCH -->
+      <button class="icon-btn" id="searchBtn" aria-label="Recherche">
+        🔍
+      </button>
+
+      <!-- CART -->
+      <button class="icon-btn" id="cartBtn" aria-label="Panier">
+        🛒
+        <span class="cart-count">0</span>
+      </button>
+
+      <!-- MENU MOBILE -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu mobile">
+        ☰
+      </button>
+
     </div>
+  </div>
+</header>
+
+<!-- ===============================
+     SEARCH OVERLAY
+================================ -->
+<div class="search-overlay" id="searchOverlay">
+  <button class="close-btn" id="closeSearch" aria-label="Fermer recherche">×</button>
+  <input
+    type="text"
+    placeholder="Rechercher une paire..."
+    aria-label="Recherche produit"
+  />
+</div>
+
+<!-- ===============================
+     CART PANEL
+================================ -->
+<aside class="cart-panel" id="cartPanel">
+  <button class="close-btn" id="closeCart" aria-label="Fermer panier">×</button>
+
+  <h3>Votre panier</h3>
+
+  <div class="cart-items" id="cartItems">
+    <p class="empty-cart">Aucun article pour l’instant</p>
+  </div>
+
+  <div class="cart-footer">
+    <p>Total :
+      <strong>
+        <span id="cartTotal">0</span> $
+      </strong>
+    </p>
+
+    <button class="checkout-btn" id="checkoutBtn">
+      Commander
+    </button>
+  </div>
+</aside>
+
+<!-- ===============================
+     MOBILE MENU
+================================ -->
+<nav class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" id="closeMenu" aria-label="Fermer menu">×</button>
+  <a href="index.html">Accueil</a>
+  <a href="produits2.html">Produits</a>
+  <a href="#">Nouveautés</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- ===============================
+     JS
+================================ -->
+<script src="header.js"></script>
+
+</body>
+</html>
+
+
 
 <main class="product-page">
 
@@ -250,6 +315,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+  
     <script>
       /* ===== ELEMENTS ===== */
       const searchBtn = document.getElementById("searchBtn");
@@ -276,19 +342,7 @@
         searchOverlay.style.display = "none";
       });
 
-      // clic dans l'input → ne ferme pas
-      searchInput.addEventListener("click", (e) => {
-        e.stopPropagation();
-      });
-
-      /* ===== CART ===== */
-      cartBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        cartPanel.classList.toggle("active");
-        searchOverlay.style.display = "none";
-        mobileMenu.classList.remove("active");
-      });
-
+      
       // clic en dehors du panier → ferme
       document.addEventListener("click", (e) => {
         if (!cartPanel.contains(e.target) && !cartBtn.contains(e.target)) {
@@ -302,6 +356,21 @@
           cartPanel.classList.remove("active");
         });
       });
+
+
+      // clic dans l'input → ne ferme pas
+      searchInput.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+
+      /* ===== CART ===== */
+      cartBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        cartPanel.classList.toggle("active");
+        searchOverlay.style.display = "none";
+        mobileMenu.classList.remove("active");
+      });
+
 
       /* ===== MOBILE MENU ===== */
       menuToggle.addEventListener("click", (e) => {
@@ -319,7 +388,10 @@
       });
     </script>
 
+
+
 <script src="data.js"></script>
 <script src="produit.js"></script>
+<script src="header.js"></script>
 </body>
 </html>
