@@ -59,10 +59,10 @@ const colorMap = {
 };
 
 const imageMap = {
-  white: 'r1-blanc.jpg', // remplace par le chemin réel
-  black: 'r1-noir.jpg',
-  blue: 'r1-bleu.jpg'
-};
+  white: "air-max.jpg",
+  black: "j4-noire.jpg",
+  blue: "j-1-retro.jpg"
+  };
 
 colorDots.forEach(dot => {
   dot.addEventListener('click', () => {
@@ -110,7 +110,7 @@ let rotateY = -18;
 // Mouvement 3D automatique (respiration subtile)
 let angle = 0;
 function autoRotate() {
-  angle += 0.03; // vitesse de rotation automatique
+  angle += 0.04; // vitesse de rotation automatique
   const autoX = Math.sin(angle) * 3; // amplitude X
   const autoY = Math.cos(angle) * 3; // amplitude Y
 
@@ -132,6 +132,5 @@ document.addEventListener("mousemove", (e) => {
   rotateX = 12 + y;
   rotateY = -18 + x;
 });
-
 
 

@@ -22,10 +22,10 @@
 
         <!-- NAV DESKTOP -->
         <nav class="nav-menu">
-          <a href="index.html">Accueil</a>
-          <a href="produits2.html">Produits</a>
-          <a href="#">Nouveautés</a>
-          <a href="contact.html">Contact</a>
+          <a href="index.html"><b>Accueil</b></a>
+          <a href="produits2.html"><b>Produits</b></a>
+          <a href="#"><b>Nouveautés</b></a>
+          <a href="contact.html"><b>Contact</b></a>
         </nav>
 
         <!-- ACTIONS -->
@@ -57,7 +57,7 @@
     <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
       <a href="index.html">Accueil</a>
-      <a href="produits.html">Produits</a>
+      <a href="produits2.html">Produits</a>
       <a href="#">Nouveautés</a>
       <a href="contact.html">Contact</a>
     </div>
@@ -89,7 +89,7 @@
             class="color-dot"
             data-color="blue"
             style="background: #3b82f6"
-        </div>
+        </div>         
       </div>
     </section>
 
@@ -98,7 +98,7 @@
       <h2>Les plus sauvegardés</h2>
       <div class="product-carousel">
         <div class="product-card">
-          <a href="produits.html"
+          <a href="produits2.html"
             ><img src="air-max.jpg" alt="Trench ASOS"
           /></a>
           <p>La paire de Air-max-plus-triple-foul black</p>
@@ -106,7 +106,7 @@
           <span class="new-price">63,74 €</span>
         </div>
         <div class="product-card">
-          <a href="produits.html"
+          <a href="produits2.html"
             ><img src="RF1BLACK.jpeg" alt="Veste Only & Sons"
           /></a>
           <p>ONLY & SONS - Veste de travail épaisse</p>
@@ -114,7 +114,7 @@
           <span class="new-price">21,29 €</span>
         </div>
         <div class="product-card">
-          <a href="produits.html"
+          <a href="produits2.html"
             ><img src="R1.jpg" alt="Doudoune Jack & Jones"
           /></a>
           <p>Jack & Jones - Doudoune Noir et gris</p>
@@ -122,23 +122,32 @@
           <span class="new-price">22,49 €</span>
         </div>
         <div class="product-card">
-          <a href="produits.html"
+          <a href="produits2.html"
             ><img src="j-1-retro.jpg" alt="Trench Topman"
           /></a>
           <p>Topman - Trench-coat en coton - Taupe</p>
           <span class="old-price">91,99 €</span>
           <span class="new-price">82,79 €</span>
         </div>
+
+                <div class="product-card">
+          <a href="produits2.html"
+            ><img src="AIR JORDAN 4 RETRO OG FC(1).png" alt="Trench Topman"
+          /></a>
+          <p>Topman - Trench-coat en coton - Taupe</p>
+          <span class="old-price">91,99 €</span>
+          <span class="new-price">82,79 €</span>
+        </div>
       </div>
-      <a href="produits.html"><button class="shop-btn">SHOPPER</button></a>
+      <a href="produits2.html"><button class="shop-btn">SHOPPER</button></a>
     </section>
 
     <!-- SECTION PRODUITS 2 -->
     <section class="featured-products">
-      <h2>Les plus sauvegardés</h2>
+      <h2> Les Plus Likés</h2>
       <div class="product-carousel">
         <div class="product-card">
-          <a href="produits.html"
+          <a href="produits2.html"
             ><img src="air-max95.jpg" alt="Trench ASOS"
           /></a>
           <p>ASOS DESIGN - Trench-coat oversize - Bleu marine</p>
@@ -146,7 +155,7 @@
           <span class="new-price">63,74 €</span>
         </div>
         <div class="product-card">
-          <a href="produits.html"
+          <a href="produits2.html"
             ><img src="J3.webp" alt="Veste Only & Sons"
           /></a>
           <p>ONLY & SONS - Veste de travail épaisse</p>
@@ -154,7 +163,7 @@
           <span class="new-price">21,29 €</span>
         </div>
         <div class="product-card">
-          <a href="produits.html"
+          <a href="produits2.html"
             ><img src="NB.jpg" alt="Doudoune Jack & Jones"
           /></a>
           <p>Jack & Jones - Doudoune Noir et gris</p>
@@ -162,13 +171,22 @@
           <span class="new-price">22,49 €</span>
         </div>
         <div class="product-card">
-          <a href="produits.html"><img src="ar-4.jpg" alt="Trench Topman" /></a>
+          <a href="produits2.html"><img src="ar-4.jpg" alt="Trench Topman" /></a>
+          <p>Topman - Trench-coat en coton - Taupe</p>
+          <span class="old-price">91,99 €</span>
+          <span class="new-price">82,79 €</span>
+        </div>
+
+                <div class="product-card">
+          <a href="produits2.html"
+            ><img src="new-balance-rose.jpg" alt="Trench Topman"
+          /></a>
           <p>Topman - Trench-coat en coton - Taupe</p>
           <span class="old-price">91,99 €</span>
           <span class="new-price">82,79 €</span>
         </div>
       </div>
-      <button class="shop-btn">SHOPPER</button>
+      <a href="produits2.html"><button class="shop-btn">SHOPPER</button></a>
     </section>
 
     <!-- LOGOS DES MARQUES -->
@@ -315,7 +333,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <script>
+
+        <script>
       /* ===== ELEMENTS ===== */
       const searchBtn = document.getElementById("searchBtn");
       const searchOverlay = document.getElementById("searchOverlay");
@@ -383,7 +402,6 @@
         });
       });
     </script>
-
     <script src="index.js"></script>
     <script src="data.js"></script>
   </body>

@@ -5,8 +5,58 @@
     <title>Stepora – Produits</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="PRODUITS2.css" />
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <header class="main-header">
+      <div class="header-container">
+        <!-- LOGO -->
+        <div class="logo">
+          <a href="#">STEPORA</a>
+        </div>
+
+        <!-- NAV DESKTOP -->
+        <nav class="nav-menu">
+          <a href="index.html"><b>Accueil</b></a>
+          <a href="produits2.html"><b>Produits</b></a>
+          <a href="#"><b>Nouveautés</b></a>
+          <a href="contact.html"><b>Contact</b></a>
+        </nav>
+
+        <!-- ACTIONS -->
+        <div class="header-actions">
+          <button class="icon-btn" id="searchBtn">🔍</button>
+
+          <button class="icon-btn" id="cartBtn">
+            🛒
+            <span class="cart-count">2</span>
+          </button>
+
+          <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+      <input type="text" placeholder="Rechercher une paire..." />
+    </div>
+
+    <!-- CART PANEL -->
+    <div class="cart-panel" id="cartPanel">
+      <h3>Votre panier</h3>
+      <p>Aucun article pour l’instant</p>
+      <button class="checkout-btn">Commander</button>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Accueil</a>
+      <a href="produits.html">Produits</a>
+      <a href="#">Nouveautés</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
     <!-- SEARCH -->
     <header class="search-container">
       <input type="text" id="searchInput" placeholder="Rechercher une paire" />
@@ -49,6 +99,150 @@
         <div class="products-grid" id="Timberland"></div>
       </section>
     </main>
+    <!-- LOGOS DES MARQUES -->
+    <section class="brand-logos">
+      <h2>Shopper par marque</h2>
+      <div class="logos">
+        <img src="logo-adidas.jpg" alt="Adidas" />
+        <img src="logo-asics.jpg" alt="Asics" />
+        <img src="logo-nike.jpg" alt="Nike" />
+        <img src="logo-timberland.jpg" alt="Timberland" />
+        <img src="logo-puma.jpg" alt="Puma" />
+        <img src="logo-NBalance.jpg" alt="New Balance" />
+      </div>
+    </section>
+
+    <footer class="footer">
+      <!-- TOP CATEGORIES -->
+      <div class="footer-top">
+        <h3>TOP DES CATÉGORIES CHAUSSURES</h3>
+
+        <div class="footer-categories">
+          <ul>
+            <li>Baskets pour homme</li>
+            <li>Baskets pour femme</li>
+            <li>Baskets streetwear</li>
+            <li>Chaussures de sport</li>
+            <li>Chaussures running</li>
+            <li>Chaussures lifestyle</li>
+            <li>Baskets montantes</li>
+            <li>Baskets basses</li>
+            <li>Sandales & claquettes</li>
+            <li>Chaussures casual</li>
+          </ul>
+
+          <ul>
+            <li>Nike</li>
+            <li>Adidas</li>
+            <li>Puma</li>
+            <li>New Balance</li>
+            <li>Jordan</li>
+            <li>Reebok</li>
+            <li>Vans</li>
+            <li>Converse</li>
+            <li>Under Armour</li>
+            <li>Asics</li>
+          </ul>
+
+          <ul>
+            <li>Baskets blanches</li>
+            <li>Baskets noires</li>
+            <li>Baskets colorées</li>
+            <li>Baskets en cuir</li>
+            <li>Baskets respirantes</li>
+            <li>Baskets sport indoor</li>
+            <li>Baskets outdoor</li>
+            <li>Chaussures training</li>
+            <li>Chaussures basketball</li>
+            <li>Chaussures football</li>
+          </ul>
+
+          <ul>
+            <li>Accessoires chaussures</li>
+            <li>Lacets</li>
+            <li>Produits d’entretien</li>
+            <li>Sacs de sport</li>
+            <li>Chaussettes sport</li>
+            <li>Nouveautés</li>
+            <li>Meilleures ventes</li>
+            <li>Promotions</li>
+            <li>Cartes cadeaux</li>
+          </ul>
+        </div>
+
+        <p class="footer-description">
+          Découvre les meilleures baskets et chaussures tendance sur
+          <strong>Stepora Shoes</strong>. Du streetwear au sport, nous
+          sélectionnons des modèles stylés, confortables et durables pour
+          t’accompagner au quotidien. Que tu sois fan de sneakers iconiques ou
+          de chaussures performantes, trouve la paire parfaite et fais passer
+          ton style au niveau supérieur.
+        </p>
+      </div>
+
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Snapchat"
+          ><i class="fab fa-snapchat-ghost"></i
+        ></a>
+
+        <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+      </div>
+
+      <!-- BOTTOM -->
+      <div class="footer-bottom">
+        <div class="footer-column">
+          <h4>AIDE & INFORMATIONS</h4>
+          <ul>
+            <li>Assistance client</li>
+            <li>Suivi de commande</li>
+            <li>Livraison & retours</li>
+            <li>Modes de paiement</li>
+            <li>FAQ</li>
+            <li>Plan du site</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>À PROPOS DE STEPORA</h4>
+          <ul>
+            <li>Qui sommes-nous ?</li>
+            <li>Nos valeurs</li>
+            <li>Nos partenaires</li>
+            <li>Carrières</li>
+            <li>Responsabilité & éthique</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>ENCORE PLUS</h4>
+          <ul>
+            <li>Application mobile</li>
+            <li>Cartes cadeaux</li>
+            <li>Offres spéciales</li>
+            <li>Soldes</li>
+            <li>Black Friday</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>SÉLECTIONNEZ LE PAYS</h4>
+          <p>Vous êtes en 🇨🇩 RDC</p>
+          <a href="#" class="change-country">CHANGER</a>
+        </div>
+      </div>
+
+      <div class="footer-copy">© 2026 Stepora Shoes — Tous droits réservés</div>
+    </footer>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <script src="data.js"></script>
     <script src="produits2.js"></script>
