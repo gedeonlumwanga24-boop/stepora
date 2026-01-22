@@ -27,14 +27,15 @@ let currentProduct = null;
    CHARGEMENT PRODUIT
 ================================ */
 function loadProduct() {
-  if (!productId) {
-    alert("Produit introuvable");
+  if (!productId || typeof products === "undefined") {
+    console.error("Produit ou base de données introuvable");
     return;
   }
 
-  currentProduct = products.find(p => p.id == productId);
+  currentProduct = products.find(p => String(p.id) === String(productId));
+
   if (!currentProduct) {
-    alert("Produit non trouvé");
+    console.error("Produit non trouvé");
     return;
   }
 
@@ -51,7 +52,6 @@ function loadProduct() {
     const thumb = document.createElement("img");
     thumb.src = img;
     thumb.classList.toggle("active", index === 0);
-    thumb.setAttribute("tabindex", 0); // accessible clavier
     thumb.addEventListener("click", () => changeImage(index));
     thumbnailsContainer.appendChild(thumb);
   });
@@ -61,7 +61,6 @@ function loadProduct() {
   currentProduct.sizes.forEach(size => {
     const btn = document.createElement("button");
     btn.textContent = size;
-    btn.setAttribute("tabindex", 0);
     btn.addEventListener("click", () => selectSize(btn, size));
     sizesContainer.appendChild(btn);
   });
@@ -79,14 +78,14 @@ function changeImage(index) {
 }
 
 function nextImage() {
-  currentImageIndex = (currentImageIndex + 1) % currentProduct.images.length;
-  changeImage(currentImageIndex);
+  changeImage((currentImageIndex + 1) % currentProduct.images.length);
 }
 
 function prevImage() {
-  currentImageIndex =
-    (currentImageIndex - 1 + currentProduct.images.length) % currentProduct.images.length;
-  changeImage(currentImageIndex);
+  changeImage(
+    (currentImageIndex - 1 + currentProduct.images.length) %
+    currentProduct.images.length
+  );
 }
 
 /* ===============================
@@ -101,56 +100,45 @@ function selectSize(button, size) {
 }
 
 /* ===============================
-   AJOUT AU PANIER
+   AJOUT AU PANIER ✅
 ================================ */
 addToCartBtn.addEventListener("click", () => {
+
   if (!selectedSize) {
     alert("Veuillez sélectionner une taille");
     return;
   }
 
+  if (typeof window.addToCart !== "function") {
+    console.error("addToCart n'est pas défini (header.js manquant)");
+    return;
+  }
 
+  window.addToCart({
+    id: currentProduct.id,
+    name: currentProduct.name,
+    price: currentProduct.price,
+    image: currentProduct.images[0],
+    size: selectedSize
+  });
 
+  // Feedback bouton
   addToCartBtn.textContent = "✔ Ajouté";
   addToCartBtn.disabled = true;
+
   setTimeout(() => {
     addToCartBtn.textContent = "Ajouter au panier";
     addToCartBtn.disabled = false;
-  }, 1500);
+  }, 1200);
 });
 
 /* ===============================
    EVENTS
 ================================ */
-nextBtn.addEventListener("click", nextImage);
 prevBtn.addEventListener("click", prevImage);
-
-/* ===============================
-   NAVIGATION CLAVIER
-================================ */
-document.addEventListener("keydown", (e) => {
-  switch (e.key) {
-    case "ArrowLeft":
-      prevImage();
-      break;
-    case "ArrowRight":
-      nextImage();
-      break;
-    case "Enter":
-    case " ":
-      const active = document.activeElement;
-      if (active.parentElement === sizesContainer || active === addToCartBtn) {
-        active.click();
-        e.preventDefault();
-      }
-      break;
-  }
-});
+nextBtn.addEventListener("click", nextImage);
 
 /* ===============================
    INIT
 ================================ */
 loadProduct();
-
-
-

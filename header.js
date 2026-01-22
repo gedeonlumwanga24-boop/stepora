@@ -1,143 +1,35 @@
 /* ===============================
-   HEADER COMPLET + PANIER + MENU + RECHERCHE
+   ELEMENTS DOM
 ================================ */
+const cartBtn = document.getElementById("cartBtn");
+const cartPanel = document.getElementById("cartPanel");
+const cartItems = document.getElementById("cartItems");
+const cartTotal = document.getElementById("cartTotal");
+const cartCount = document.querySelector(".cart-count");
 
-document.addEventListener("DOMContentLoaded", () => {
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
 
-  // ===============================
-  // ELEMENTS
-  // ===============================
-  const cartBtn = document.getElementById("cartBtn");
-  const cartPanel = document.getElementById("cartPanel");
-  const closeCartBtn = document.getElementById("closeCart");
+const searchBtn = document.getElementById("searchBtn");
+const searchOverlay = document.getElementById("searchOverlay");
+const searchInput = searchOverlay.querySelector("input");
 
-  const menuToggle = document.getElementById("menuToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const closeMenuBtn = document.getElementById("closeMenu");
+const overlay = document.getElementById("overlay");
 
-  const searchBtn = document.getElementById("searchBtn");
-  const searchOverlay = document.getElementById("searchOverlay");
-  const closeSearchBtn = document.getElementById("closeSearch");
-  const searchInput = searchOverlay.querySelector("input");
+/* ===============================
+   UTILS CART
+================================ */
+function getCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
 
-  const overlay = document.getElementById("overlay");
+function saveCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
 
-  // ===============================
-  // FONCTION UTILITAIRE : fermer tout
-  // ===============================
-  function closeAll() {
-    cartPanel.classList.remove("open");
-    mobileMenu.classList.remove("open");
-    searchOverlay.classList.remove("show");
-    overlay.classList.remove("show");
-    document.body.classList.remove("lock");
-    searchInput.value = "";
-  }
+window.addToCart = function(product) {
+  const cart = getCart();
 
-  // ===============================
-  // PANIER
-  // ===============================
-  if (cartBtn && cartPanel) {
-    cartBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeAll();
-      cartPanel.classList.add("open");
-      overlay.classList.add("show");
-      document.body.classList.add("lock");
-    });
-  }
-
-  if (closeCartBtn) {
-    closeCartBtn.addEventListener("click", closeAll);
-  }
-
-  // ===============================
-  // MENU MOBILE
-  // ===============================
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeAll();
-      mobileMenu.classList.add("open");
-      overlay.classList.add("show");
-      document.body.classList.add("lock");
-    });
-  }
-
-  if (closeMenuBtn) {
-    closeMenuBtn.addEventListener("click", closeAll);
-  }
-
-  // ===============================
-  // RECHERCHE
-  // ===============================
-  if (searchBtn && searchOverlay) {
-    searchBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeAll();
-      searchOverlay.classList.add("show");
-      overlay.classList.add("show");
-      document.body.classList.add("lock");
-      searchInput.focus();
-    });
-  }
-
-  if (closeSearchBtn) {
-    closeSearchBtn.addEventListener("click", closeAll);
-  }
-
-  // Écoute la saisie dans l’input
-  searchInput.addEventListener("input", (e) => {
-    const query = e.target.value.trim().toLowerCase();
-    console.log("Recherche :", query);
-
-    // Ici tu peux filtrer tes produits dynamiquement :
-    // const results = products.filter(p => p.name.toLowerCase().includes(query));
-    // afficherResults(results);
-  });
-
-  // ===============================
-  // OVERLAY CLICK = fermer tout
-  // ===============================
-  if (overlay) {
-    overlay.addEventListener("click", closeAll);
-  }
-
-  // ===============================
-  // RESIZE : desktop > 1024px
-  // ===============================
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 1024) closeAll();
-  });
-
-});
-
-// ===============================
-// BOUTONS AJOUT PANIER
-// ===============================
-document.querySelectorAll(".add-to-cart").forEach(btn => {
-  btn.addEventListener("click", () => {
-
-    const product = {
-      id: btn.dataset.id,
-      name: btn.dataset.name,
-      price: parseFloat(btn.dataset.price),
-      images: [btn.dataset.image]
-    };
-
-    addToCart(product); // fonction déjà existante dans ton JS
-    alert(`${product.name} ajouté au panier !`);
-  });
-});
-
-
-// ---------------------------
-// GÉRER LE PANIER
-// ---------------------------
-window.addToCart = function (product) {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  // Vérifier si le produit + taille existe déjà
   const existing = cart.find(
     item => item.id === product.id && item.size === product.size
   );
@@ -148,47 +40,159 @@ window.addToCart = function (product) {
     cart.push({ ...product, quantity: 1 });
   }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
+  saveCart(cart);
   updateCartUI();
+  openCart();
 };
 
-// ---------------------------
-// METTRE À JOUR L’AFFICHAGE DU PANIER
-// ---------------------------
-function updateCartUI() {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const cartItemsContainer = document.getElementById("cartItems");
-  const cartCount = document.querySelector(".cart-count");
-  const cartTotal = document.getElementById("cartTotal");
-
-  if (!cartItemsContainer || !cartCount || !cartTotal) return;
-
-  if (cart.length === 0) {
-    cartItemsContainer.innerHTML = '<p class="empty-cart">Aucun article pour l’instant</p>';
-  } else {
-    cartItemsContainer.innerHTML = cart
-      .map(
-        item => `
-      <div class="cart-item">
-        <img src="${item.images[0]}" alt="${item.name}" />
-        <div>
-          <p>${item.name} - ${item.size}</p>
-          <p>${item.quantity} x ${item.price.toFixed(2)} €</p>
-        </div>
-      </div>
-    `
-      )
-      .join("");
-  }
-
-  cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
-  cartTotal.textContent = cart
-    .reduce((sum, item) => sum + item.price * item.quantity, 0)
-    .toFixed(2);
+function removeFromCart(index) {
+  const cart = getCart();
+  cart.splice(index, 1);
+  saveCart(cart);
+  updateCartUI();
 }
 
-// Mettre à jour le panier au chargement
+/* ===============================
+   UPDATE CART UI
+================================ */
+function updateCartUI() {
+  const cart = getCart();
+  cartItems.innerHTML = "";
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = `<p class="empty-cart">Aucun article pour l’instant</p>`;
+    cartCount.textContent = "0";
+    cartTotal.textContent = "0.00";
+    cartCount.style.display = "none";
+    return;
+  }
+
+  let total = 0;
+  let count = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price * item.quantity;
+    count += item.quantity;
+
+    const div = document.createElement("div");
+    div.className = "cart-item";
+
+    div.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
+      <div class="cart-info">
+        <strong>${item.name}</strong>
+        <span>Taille : ${item.size}</span>
+        <p>${item.quantity} × ${item.price.toFixed(2)} €</p>
+      </div>
+      <button class="remove-btn">×</button>
+    `;
+
+    div.querySelector(".remove-btn").addEventListener("click", () => {
+      removeFromCart(index);
+    });
+
+    cartItems.appendChild(div);
+  });
+
+  cartCount.textContent = count;
+  cartCount.style.display = count === 0 ? "none" : "inline-block";
+  cartTotal.textContent = total.toFixed(2);
+}
+
+/* ===============================
+   OPEN / CLOSE CART
+================================ */
+function openCart() {
+  cartPanel.classList.add("open");
+  overlay.classList.add("show");
+  mobileMenu.classList.remove("open");
+}
+
+function closeCart() {
+  cartPanel.classList.remove("open");
+  overlay.classList.remove("show");
+}
+
+/* ===============================
+   OPEN / CLOSE MOBILE MENU
+================================ */
+function openMobileMenu() {
+  mobileMenu.classList.add("open");
+  overlay.classList.add("show");
+  cartPanel.classList.remove("open");
+}
+
+function closeMobileMenu() {
+  mobileMenu.classList.remove("open");
+  overlay.classList.remove("show");
+}
+
+/* ===============================
+   EVENT LISTENERS
+================================ */
+// Cart button
+cartBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  if (cartPanel.classList.contains("open")) {
+    closeCart();
+  } else {
+    openCart();
+  }
+});
+
+// Menu toggle
+menuToggle.addEventListener("click", (e) => {
+  e.stopPropagation();
+  if (mobileMenu.classList.contains("open")) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
+});
+
+// Close buttons inside mobile menu or cart
+document.querySelectorAll(".mobile-menu .close-btn").forEach(btn => {
+  btn.addEventListener("click", closeMobileMenu);
+});
+document.querySelectorAll(".cart-panel .close-btn").forEach(btn => {
+  btn.addEventListener("click", closeCart);
+});
+
+// Click overlay to close
+overlay.addEventListener("click", () => {
+  closeCart();
+  closeMobileMenu();
+});
+
+// Click outside → ferme
+document.addEventListener("click", (e) => {
+  if (
+    !cartPanel.contains(e.target) &&
+    !cartBtn.contains(e.target) &&
+    !mobileMenu.contains(e.target) &&
+    !menuToggle.contains(e.target)
+  ) {
+    closeCart();
+    closeMobileMenu();
+  }
+});
+
+// Search
+searchBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  searchOverlay.classList.add("show");
+  overlay.classList.add("show");
+  closeCart();
+  closeMobileMenu();
+});
+
+searchOverlay.addEventListener("click", () => {
+  searchOverlay.classList.remove("show");
+  overlay.classList.remove("show");
+});
+searchInput.addEventListener("click", (e) => e.stopPropagation());
+
+/* ===============================
+   INIT
+================================ */
 updateCartUI();
-
-
-
