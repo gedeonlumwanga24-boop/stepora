@@ -2,17 +2,34 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>Stepora – Produits</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="PRODUITS2.css" />
+    <title>Stepora Shoes</title>
+
+    <!-- GOOGLE FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="PRODUITS2.css" />
   </head>
+
   <body>
+    <!-- ===============================
+     OVERLAY GLOBAL
+================================ -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ===============================
+     HEADER
+================================ -->
     <header class="main-header">
       <div class="header-container">
         <!-- LOGO -->
         <div class="logo">
-          <a href="#">STEPORA</a>
+          <a href="index.html">STEPORA</a>
         </div>
 
         <!-- NAV DESKTOP -->
@@ -25,37 +42,75 @@
 
         <!-- ACTIONS -->
         <div class="header-actions">
-          <button class="icon-btn" id="searchBtn">🔍</button>
-
-          <button class="icon-btn" id="cartBtn">
-            🛒
-            <span class="cart-count">2</span>
+          <!-- SEARCH -->
+          <button class="icon-btn" id="searchBtn" aria-label="Recherche">
+            🔍
           </button>
 
-          <button class="menu-toggle" id="menuToggle">☰</button>
+          <!-- CART -->
+          <button class="icon-btn" id="cartBtn" aria-label="Panier">
+            🛒
+            <span class="cart-count">0</span>
+          </button>
+
+          <!-- MENU MOBILE -->
+          <button class="menu-toggle" id="menuToggle" aria-label="Menu mobile">
+            ☰
+          </button>
         </div>
       </div>
     </header>
 
-    <!-- SEARCH OVERLAY -->
+    <!-- ===============================
+     SEARCH OVERLAY
+================================ -->
     <div class="search-overlay" id="searchOverlay">
-      <input type="text" placeholder="Rechercher une paire..." />
+      <button class="close-btn" id="closeSearch" aria-label="Fermer recherche">
+        ×
+      </button>
+      <input
+        type="text"
+        placeholder="Rechercher une paire..."
+        aria-label="Recherche produit"
+      />
     </div>
 
-    <!-- CART PANEL -->
-    <div class="cart-panel" id="cartPanel">
+    <!-- ===============================
+     CART PANEL
+================================ -->
+    <aside class="cart-panel" id="cartPanel">
+      <button class="close-btn" id="closeCart" aria-label="Fermer panier">
+        ×
+      </button>
+
       <h3>Votre panier</h3>
-      <p>Aucun article pour l’instant</p>
-      <button class="checkout-btn">Commander</button>
-    </div>
 
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
+      <div class="cart-items" id="cartItems">
+        <p class="empty-cart">Aucun article pour l’instant</p>
+      </div>
+
+      <div class="cart-footer">
+        <p>
+          Total :
+          <strong> <span id="cartTotal">0</span> $ </strong>
+        </p>
+
+        <button class="checkout-btn" id="checkoutBtn">Commander</button>
+      </div>
+    </aside>
+
+    <!-- ===============================
+     MOBILE MENU
+================================ -->
+    <nav class="mobile-menu" id="mobileMenu">
+      <button class="close-btn" id="closeMenu" aria-label="Fermer menu">
+        ×
+      </button>
       <a href="index.html">Accueil</a>
-      <a href="produits.html">Produits</a>
+      <a href="produits2.html">Produits</a>
       <a href="#">Nouveautés</a>
       <a href="contact.html">Contact</a>
-    </div>
+    </nav>
 
     <!-- SEARCH -->
     <header class="search-container">
@@ -243,6 +298,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
+    <!-- Scripts JS -->
 
     <script src="data.js"></script>
     <script src="produits2.js"></script>

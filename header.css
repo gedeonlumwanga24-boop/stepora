@@ -4,7 +4,7 @@
   top: 0;
   background: #fff;
   z-index: 1000;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .header-container {
@@ -69,7 +69,7 @@
 .search-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   display: none;
   align-items: center;
   justify-content: center;
@@ -95,7 +95,7 @@
   height: 100vh;
   background: #fff;
   padding: 20px;
-  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
   z-index: 1500;
 }
@@ -114,9 +114,6 @@
   border-radius: 25px;
   cursor: pointer;
 }
-
-
-
 
 .search-overlay,
 .cart-panel,
@@ -140,7 +137,7 @@
 .cart-panel {
   position: fixed;
   top: 0;
-  right: -380px;   /* caché */
+  right: -380px; /* caché */
   width: 380px;
   height: 100%;
   background: #fff;
@@ -149,7 +146,7 @@
 }
 
 .cart-panel.open {
-  right: 0;       /* visible */
+  right: 0; /* visible */
 }
 
 /* MOBILE MENU */
@@ -165,7 +162,7 @@
   width: 220px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   display: none;
   flex-direction: column;
   padding: 20px;
@@ -194,14 +191,13 @@
   }
 }
 
-
 /* ===============================
    OVERLAY GLOBAL
 ================================ */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   opacity: 0;
   pointer-events: none;
   transition: 0.3s;
@@ -278,8 +274,6 @@ body.lock {
   opacity: 1;
   pointer-events: auto;
 }
-
-
 
 /* PAIRE DU PANIER */
 

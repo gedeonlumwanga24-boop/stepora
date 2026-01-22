@@ -1,166 +1,153 @@
-
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stepora Shoes</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stepora Shoes</title>
 
-  <!-- GOOGLE FONT -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-    rel="stylesheet"
-  />
+    <!-- GOOGLE FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="produit.css" />
-</head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="produit.css" />
+  </head>
 
-<body>
-
-<!-- ===============================
+  <body>
+    <!-- ===============================
      OVERLAY GLOBAL
 ================================ -->
-<div class="overlay" id="overlay"></div>
+    <div class="overlay" id="overlay"></div>
 
-<!-- ===============================
+    <!-- ===============================
      HEADER
 ================================ -->
-<header class="main-header">
-  <div class="header-container">
+    <header class="main-header">
+      <div class="header-container">
+        <!-- LOGO -->
+        <div class="logo">
+          <a href="index.html">STEPORA</a>
+        </div>
 
-    <!-- LOGO -->
-    <div class="logo">
-      <a href="index.html">STEPORA</a>
-    </div>
+        <!-- NAV DESKTOP -->
+        <nav class="nav-menu">
+          <a href="index.html"><b>Accueil</b></a>
+          <a href="produits2.html"><b>Produits</b></a>
+          <a href="#"><b>Nouveautés</b></a>
+          <a href="contact.html"><b>Contact</b></a>
+        </nav>
 
-    <!-- NAV DESKTOP -->
-    <nav class="nav-menu">
-      <a href="index.html"><b>Accueil</b></a>
-      <a href="produits2.html"><b>Produits</b></a>
-      <a href="#"><b>Nouveautés</b></a>
-      <a href="contact.html"><b>Contact</b></a>
-    </nav>
+        <!-- ACTIONS -->
+        <div class="header-actions">
+          <!-- SEARCH -->
+          <button class="icon-btn" id="searchBtn" aria-label="Recherche">
+            🔍
+          </button>
 
-    <!-- ACTIONS -->
-    <div class="header-actions">
+          <!-- CART -->
+          <button class="icon-btn" id="cartBtn" aria-label="Panier">
+            🛒
+            <span class="cart-count">0</span>
+          </button>
 
-      <!-- SEARCH -->
-      <button class="icon-btn" id="searchBtn" aria-label="Recherche">
-        🔍
-      </button>
+          <!-- MENU MOBILE -->
+          <button class="menu-toggle" id="menuToggle" aria-label="Menu mobile">
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
 
-      <!-- CART -->
-      <button class="icon-btn" id="cartBtn" aria-label="Panier">
-        🛒
-        <span class="cart-count">0</span>
-      </button>
-
-      <!-- MENU MOBILE -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu mobile">
-        ☰
-      </button>
-
-    </div>
-  </div>
-</header>
-
-<!-- ===============================
+    <!-- ===============================
      SEARCH OVERLAY
 ================================ -->
-<div class="search-overlay" id="searchOverlay">
-  <button class="close-btn" id="closeSearch" aria-label="Fermer recherche">×</button>
-  <input
-    type="text"
-    placeholder="Rechercher une paire..."
-    aria-label="Recherche produit"
-  />
-</div>
+    <div class="search-overlay" id="searchOverlay">
+      <button class="close-btn" id="closeSearch" aria-label="Fermer recherche">
+        ×
+      </button>
+      <input
+        type="text"
+        placeholder="Rechercher une paire..."
+        aria-label="Recherche produit"
+      />
+    </div>
 
-<!-- ===============================
+    <!-- ===============================
      CART PANEL
 ================================ -->
-<aside class="cart-panel" id="cartPanel">
-  <button class="close-btn" id="closeCart" aria-label="Fermer panier">×</button>
+    <aside class="cart-panel" id="cartPanel">
+      <button class="close-btn" id="closeCart" aria-label="Fermer panier">
+        ×
+      </button>
 
-  <h3>Votre panier</h3>
+      <h3>Votre panier</h3>
 
-  <div class="cart-items" id="cartItems">
-    <p class="empty-cart">Aucun article pour l’instant</p>
-  </div>
+      <div class="cart-items" id="cartItems">
+        <p class="empty-cart">Aucun article pour l’instant</p>
+      </div>
 
-  <div class="cart-footer">
-    <p>Total :
-      <strong>
-        <span id="cartTotal">0</span> $
-      </strong>
-    </p>
+      <div class="cart-footer">
+        <p>
+          Total :
+          <strong> <span id="cartTotal">0</span> $ </strong>
+        </p>
 
-    <button class="checkout-btn" id="checkoutBtn">
-      Commander
-    </button>
-  </div>
-</aside>
+        <button class="checkout-btn" id="checkoutBtn">Commander</button>
+      </div>
+    </aside>
 
-<!-- ===============================
+    <!-- ===============================
      MOBILE MENU
 ================================ -->
-<nav class="mobile-menu" id="mobileMenu">
-  <button class="close-btn" id="closeMenu" aria-label="Fermer menu">×</button>
-  <a href="index.html">Accueil</a>
-  <a href="produits2.html">Produits</a>
-  <a href="#">Nouveautés</a>
-  <a href="contact.html">Contact</a>
-</nav>
+    <nav class="mobile-menu" id="mobileMenu">
+      <button class="close-btn" id="closeMenu" aria-label="Fermer menu">
+        ×
+      </button>
+      <a href="index.html">Accueil</a>
+      <a href="produits2.html">Produits</a>
+      <a href="#">Nouveautés</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
+    <main class="product-page">
+      <!-- LEFT : GALLERY -->
+      <section class="product-gallery">
+        <span class="badge">⭐ Bien noté</span>
 
-<main class="product-page">
+        <img id="mainImage" src="" alt="Produit Stepora" />
 
-  <!-- LEFT : GALLERY -->
-  <section class="product-gallery">
-    <span class="badge">⭐ Bien noté</span>
+        <div class="gallery-nav">
+          <button id="prevBtn"><b>‹</b></button>
+          <button id="nextBtn"><b>›</b></button>
+        </div>
 
-    <img id="mainImage" src="" alt="Produit Stepora">
+        <div class="thumbnails" id="thumbnails"></div>
+      </section>
 
-    <div class="gallery-nav">
-      <button id="prevBtn"><B>‹</B></button>
-      <button id="nextBtn"><B>›</B></button>
-    </div>
+      <!-- RIGHT : DETAILS -->
+      <section class="product-details">
+        <h1 id="productName"></h1>
+        <p class="price" id="productPrice"></p>
 
-    <div class="thumbnails" id="thumbnails"></div>
-  </section>
+        <div class="custom">🎨 Créer votre propre modèle</div>
 
-  <!-- RIGHT : DETAILS -->
-  <section class="product-details">
+        <!-- SIZES -->
+        <div class="sizes-header">
+          <h3>Sélectionner la taille</h3>
+          <span>📏 Guide des tailles</span>
+        </div>
 
-    <h1 id="productName"></h1>
-    <p class="price" id="productPrice"></p>
+        <div class="sizes" id="sizes"></div>
 
-    <div class="custom">
-      🎨 Créer votre propre modèle
-    </div>
+        <button class="add-to-cart" id="addToCart">Ajouter au panier</button>
+      </section>
+    </main>
 
-    <!-- SIZES -->
-    <div class="sizes-header">
-      <h3>Sélectionner la taille</h3>
-      <span>📏 Guide des tailles</span>
-    </div>
-
-    <div class="sizes" id="sizes"></div>
-
-    <button class="add-to-cart" id="addToCart">
-      Ajouter au panier
-    </button>
-
-  </section>
-
-</main>
-    
-
-<script src="header.js"></script>
-<script src="data.js"></script>
-<script src="produit.js"></script>
-
-</body>
+    <script src="header.js"></script>
+    <script src="data.js"></script>
+    <script src="produit.js"></script>
+  </body>
 </html>

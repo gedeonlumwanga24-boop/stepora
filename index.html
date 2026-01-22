@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -69,6 +70,7 @@
      SEARCH OVERLAY
 ================================ -->
 <div class="search-overlay" id="searchOverlay">
+  <button class="close-btn" id="closeSearch" aria-label="Fermer recherche">×</button>
   <input
     type="text"
     placeholder="Rechercher une paire..."
@@ -80,6 +82,7 @@
      CART PANEL
 ================================ -->
 <aside class="cart-panel" id="cartPanel">
+  <button class="close-btn" id="closeCart" aria-label="Fermer panier">×</button>
 
   <h3>Votre panier</h3>
 
@@ -98,23 +101,18 @@
       Commander
     </button>
   </div>
-
 </aside>
 
 <!-- ===============================
      MOBILE MENU
 ================================ -->
 <nav class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" id="closeMenu" aria-label="Fermer menu">×</button>
   <a href="index.html">Accueil</a>
   <a href="produits2.html">Produits</a>
   <a href="#">Nouveautés</a>
   <a href="contact.html">Contact</a>
 </nav>
-
-<!-- ===============================
-     JS
-================================ -->
-<script src="header.js"></script>
 
 
 
@@ -391,9 +389,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
-        
-<script src="data.js"></script>
-<script src="produit.js"></script>
-<script src="header.js"></script>
+<!-- Scripts JS -->
+<script src="header.js" defer></script> <!-- header d’abord pour panier & menu -->
+<script src="data.js" defer></script>   <!-- données produits -->
+<script src="index.js" defer></script>  <!-- animations de la page index -->
+<script src="produit.js" defer></script> <!-- page produit -->
+
+
 </body>
 </html>

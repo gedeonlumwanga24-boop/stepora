@@ -46,7 +46,7 @@ body.lock {
   top: 0;
   background: #fff;
   z-index: 1000;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .header-container {
@@ -113,7 +113,7 @@ body.lock {
 .search-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -162,7 +162,7 @@ body.lock {
   height: 100vh;
   background: #fff;
   padding: 20px;
-  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   transition: 0.3s ease;
   z-index: 1500;
   overflow-y: auto;
@@ -283,7 +283,7 @@ body.lock {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   opacity: 0;
   pointer-events: none;
   transition: 0.3s ease;
@@ -294,7 +294,6 @@ body.lock {
   opacity: 1;
   pointer-events: auto;
 }
-
 
 /* ===============================
    RESPONSIVE
@@ -308,8 +307,6 @@ body.lock {
     display: block;
   }
 }
-
-
 
 /* HERO */
 .hero {
@@ -380,7 +377,9 @@ body.lock {
   transform: perspective(1200px) rotateX(12deg) rotateY(-18deg) translateY(40px);
 
   filter: drop-shadow(0 60px 80px rgba(0, 0, 0, 0.65));
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
 /* Bouton BUY NOW */
@@ -438,7 +437,9 @@ body.lock {
   border-radius: 50%;
   cursor: pointer;
   border: 2px solid rgba(255, 255, 255, 0.4);
-  transition: transform 0.2s ease, border 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border 0.2s ease;
 }
 
 .color-dot:hover {
@@ -543,7 +544,9 @@ body.lock {
 
 .product-card {
   position: relative;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .product-card img {
@@ -708,11 +711,10 @@ body.lock {
   }
 }
 
-
 .footer {
   background: #fff;
   color: #111;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .footer-top {
@@ -826,7 +828,9 @@ body.lock {
 .footer-socials a {
   font-size: 1.4rem;
   color: #111;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .footer-socials a:hover {

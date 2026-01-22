@@ -55,7 +55,7 @@ body {
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 /* NAV ARROWS */
@@ -220,18 +220,17 @@ body {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
 }
 
 .add-to-cart:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(248, 4, 4, 0.2);
-
 }
 
-
 @media (max-width: 480px) {
-
   .product-page {
     gap: 24px;
   }
@@ -280,14 +279,12 @@ body {
   }
 }
 
-
 /* ===============================
    RESPONSIVE NATUREL (FLOW)
 ================================ */
 
 /* TABLET & MOBILE */
 @media (max-width: 1024px) {
-
   .product-page {
     display: block;
     height: auto;
@@ -330,7 +327,6 @@ body {
 }
 
 @media (max-width: 900px) {
-
   .product-page {
     grid-template-columns: 1fr;
     height: auto;
