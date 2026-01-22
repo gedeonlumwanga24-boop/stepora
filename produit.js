@@ -1,4 +1,3 @@
-
 /* ===============================
    RÉCUPÉRATION ID PRODUIT
 ================================ */
@@ -41,7 +40,7 @@ function loadProduct() {
 
   // Infos produit
   productName.textContent = currentProduct.name;
-  productPrice.textContent = `${currentProduct.price} €`;
+  productPrice.textContent = `${currentProduct.price.toFixed(2)} €`;
 
   // Image principale
   mainImage.src = currentProduct.images[0];
@@ -62,7 +61,7 @@ function loadProduct() {
   currentProduct.sizes.forEach(size => {
     const btn = document.createElement("button");
     btn.textContent = size;
-    btn.setAttribute("tabindex", 0); // accessible clavier
+    btn.setAttribute("tabindex", 0);
     btn.addEventListener("click", () => selectSize(btn, size));
     sizesContainer.appendChild(btn);
   });
@@ -110,16 +109,7 @@ addToCartBtn.addEventListener("click", () => {
     return;
   }
 
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push({
-    id: currentProduct.id,
-    name: currentProduct.name,
-    price: currentProduct.price,
-    image: currentProduct.images[0],
-    size: selectedSize,
-    quantity: 1
-  });
-  localStorage.setItem("cart", JSON.stringify(cart));
+
 
   addToCartBtn.textContent = "✔ Ajouté";
   addToCartBtn.disabled = true;
@@ -161,4 +151,6 @@ document.addEventListener("keydown", (e) => {
    INIT
 ================================ */
 loadProduct();
+
+
 
