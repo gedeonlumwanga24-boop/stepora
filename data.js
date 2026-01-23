@@ -13,10 +13,11 @@ const products = [
     rating: 4.8,
     isNew: true,
     images: [
-      "R1-LV.png",
-      "R1-din.png",
-      "R1-LV.png",
-      "R1-FORCE.png",
+      "AIR FORCE 1 '07 FLYEASE.png",
+      "AIR FORCE 1 '07 FLYEASE(0).png",
+      "AIR FORCE 1 '07 FLYEASE(5).png",
+      "AIR FORCE 1 '07 FLYEASE(3).png",
+      "AIR FORCE 1 '07 FLYEASE(7).png",
     ],
     sizes: [
       "US 6","US 6.5","US 7","US 7.5","US 8",
@@ -28,7 +29,7 @@ const products = [
 
   {
     id: 2,
-    name: "Adidas Ultraboost Light",
+    name: "AIR MAX 95 BIG BUBBLE ZIP",
     brand: "Adidas",
     category: "running",
     price: 189.99,
@@ -36,10 +37,10 @@ const products = [
     rating: 4.9,
     isNew: true,
     images: [
-      "AIR JORDAN 1 MID SE(1).png",
-      "AIR JORDAN 1 MID SE.png",
-      "AIR JORDAN 1 MID SE(0).png",
-      "AIR JORDAN 1 MID SE(1).png"
+      "AIR MAX 95 BIG BUBBLE ZIP SP.png",
+      "AIR MAX 95 BIG BUBBLE ZIP SP(1).png",
+      "AIR MAX 95 BIG BUBBLE ZIP SP(2).png",
+      "AIR MAX 95 BIG BUBBLE ZIP SP(3).png"
     ],
     sizes: [
       "US 6","US 7","US 8","US 9","US 10","US 11","US 12"
@@ -49,7 +50,7 @@ const products = [
 
   {
     id: 3,
-    name: "Nike Air Jordan 1 Retro",
+    name: "AIR JORDAN 1 MID SE",
     brand: "Nike",
     category: "basketball",
     price: 199.99,
@@ -57,10 +58,10 @@ const products = [
     rating: 5.0,
     isNew: false,
     images: [
-      "AIR JORDAN 4 RETRO OG FC(1).png",
-      "AIR JORDAN 4 RETRO OG FC(0).png",
-      "AIR JORDAN 4 RETRO OG FC.png",
-      "AIR JORDAN 4 RETRO OG FC(0).png"
+      "AIR JORDAN 1 MID SE(3).png",
+      "AIR JORDAN 1 MID SE.png",
+      "AIR JORDAN 1 MID SE(4).png",
+      "AIR JORDAN 1 MID SE(2).png"
     ],
     sizes: [
       "US 7","US 8","US 9","US 10","US 11","US 12","US 13"
@@ -70,7 +71,7 @@ const products = [
 
   {
     id: 4,
-    name: "Puma RS-X Tech",
+    name: "W NIKE SHOX TL",
     brand: "Puma",
     category: "sneakers",
     price: 139.99,
@@ -112,7 +113,7 @@ const products = [
 
   {
     id: 6,
-    name: "Under Armour Curry Flow 10",
+    name: "JORDAN SPIZIKE LOW",
     brand: "Under Armour",
     category: "basketball",
     price: 169.99,
@@ -120,10 +121,11 @@ const products = [
     rating: 4.8,
     isNew: false,
     images: [
-      "nocta-blanche.jpg",
-      "nocta-noire.png",
-      "nocta-jaune.jpg",
-      "nocta-noire.png"
+      "JORDAN SPIZIKE LOW.png",
+      "JORDAN SPIZIKE LOW(1).png",
+      "JORDAN SPIZIKE LOW(0).png",
+      "JORDAN SPIZIKE LOW(3).png",
+      "JORDAN SPIZIKE LOW(2).png"
     ],
     sizes: [
       "US 7","US 8","US 9","US 10","US 11","US 12","US 13"
@@ -133,9 +135,9 @@ const products = [
 
   {
     id: 7,
-    name: "Timberland Classic Boot",
-    brand: "Timberland",
-    category: "mocassins",
+    name: "AIR JORDAN 3 RETRO",
+    brand: "Basketsurbaines",
+    category: "Basketsurbaines",
     price: 189.99,
     likes: 260,
     rating: 4.6,
@@ -145,6 +147,28 @@ const products = [
       "AIR JORDAN 3 RETRO.png",
       "AIR JORDAN 3 RETRO(0).png",
       "AIR JORDAN 3 RETRO(3).png"
+    ],
+    sizes: [
+      "US 7","US 8","US 9","US 10","US 11","US 12","US 14","US 18"
+    ],
+    description: "Chaussure robuste et élégante pour toutes les saisons."
+  },
+
+
+    {
+    id: 8,
+    name: "NIKE AIR MAX 90",
+    brand: "SneakersLifestyle",
+    category: "SneakersLifestyle",
+    price: 189.99,
+    likes: 260,
+    rating: 4.6,
+    isNew: false,
+    images: [
+      "NIKE AIR MAX 90.png",
+      "NIKE AIR MAX 90(1).png",
+      "NIKE AIR MAX 90(3).png",
+      "NIKE AIR MAX 90(2).png"
     ],
     sizes: [
       "US 7","US 8","US 9","US 10","US 11","US 12"
@@ -162,7 +186,8 @@ const categories = [
   { id: "running", label: "Running" },
   { id: "basketball", label: "Basketball" },
   { id: "sneakers", label: "Sneakers" },
-  { id: "mocassins", label: "Mocassins" }
+  { id: "Basketsurbaines", label: "Basketsurbaines" },
+  { id: "SneakersLifestyle", label: "SneakersLifestyle" }
 ];
 
 /* ===============================

@@ -13,7 +13,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="PRODUITS2.css" />
+    <link rel="stylesheet" href="produits.css" />
   </head>
 
   <body>
@@ -22,44 +22,47 @@
 ================================ -->
     <div class="overlay" id="overlay"></div>
 
-    <!-- ===============================
+<!-- ===============================
      HEADER
 ================================ -->
-    <header class="main-header">
-      <div class="header-container">
-        <!-- LOGO -->
-        <div class="logo">
-          <a href="index.html">STEPORA</a>
-        </div>
+<header class="main-header">
+  <div class="header-container">
 
-        <!-- NAV DESKTOP -->
-        <nav class="nav-menu">
-          <a href="index.html"><b>Accueil</b></a>
-          <a href="produits2.html"><b>Produits</b></a>
-          <a href="#"><b>Nouveautés</b></a>
-          <a href="contact.html"><b>Contact</b></a>
-        </nav>
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="index.html">STEPORA</a>
+    </div>
 
-        <!-- ACTIONS -->
-        <div class="header-actions">
-          <!-- SEARCH -->
-          <button class="icon-btn" id="searchBtn" aria-label="Recherche">
-            🔍
-          </button>
+    <!-- NAV DESKTOP -->
+    <nav class="nav-menu">
+      <a href="index.html"><b>Accueil</b></a>
+      <a href="produits2.html"><b>Produits</b></a>
+      <a href="apropos.html"><b>A-apropos</b></b></a>
+      <a href="contact.html"><b>Contact</b></a>
+    </nav>
 
-          <!-- CART -->
-          <button class="icon-btn" id="cartBtn" aria-label="Panier">
-            🛒
-            <span class="cart-count">0</span>
-          </button>
+    <!-- ACTIONS -->
+    <div class="header-actions">
 
-          <!-- MENU MOBILE -->
-          <button class="menu-toggle" id="menuToggle" aria-label="Menu mobile">
-            ☰
-          </button>
-        </div>
-      </div>
-    </header>
+      <!-- SEARCH -->
+      <button class="icon-btn" id="searchBtn" aria-label="Recherche">
+        🔍
+      </button>
+
+      <!-- CART -->
+      <button class="icon-btn" id="cartBtn" aria-label="Panier">
+        🛒
+        <span class="cart-count">0</span>
+      </button>
+
+      <!-- MENU MOBILE -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu mobile">
+        ☰
+      </button>
+
+    </div>
+  </div>
+</header>
 
     <!-- ===============================
      SEARCH OVERLAY
@@ -108,7 +111,7 @@
       </button>
       <a href="index.html">Accueil</a>
       <a href="produits2.html">Produits</a>
-      <a href="#">Nouveautés</a>
+      <a href="apropos.html">A-propos</a>
       <a href="contact.html">Contact</a>
     </nav>
 
@@ -140,8 +143,8 @@
       </section>
 
       <section>
-        <h2>🥿 Mocassins</h2>
-        <div class="products-grid" id="mocassins"></div>
+        <h2>Baskets urbaines</h2>
+        <div class="products-grid" id="Basketsurbaines"></div>
       </section>
 
       <section>
@@ -152,6 +155,11 @@
       <section>
         <h2>🥿 Timberland</h2>
         <div class="products-grid" id="Timberland"></div>
+      </section>
+
+      <section>
+        <h2>Sneakers-Lifestyle</h2>
+        <div class="products-grid" id="SneakersLifestyle"></div>
       </section>
     </main>
     <!-- LOGOS DES MARQUES -->
@@ -238,9 +246,7 @@
       <div class="footer-socials">
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="Snapchat"
-          ><i class="fab fa-snapchat-ghost"></i
-        ></a>
+        <a href="#" aria-label="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
 
         <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
         <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
@@ -302,6 +308,6 @@
     <!-- Scripts JS -->
 
     <script src="data.js"></script>
-    <script src="produits2.js"></script>
+    <script src="produits.js"></script>
   </body>
 </html>

@@ -142,3 +142,31 @@ nextBtn.addEventListener("click", nextImage);
    INIT
 ================================ */
 loadProduct();
+
+
+
+// NAVIGATION AU CLAVIER
+
+// À remplacer par ta logique réelle
+function goPrev() {
+  prevBtn.click();
+}
+
+function goNext() {
+  nextBtn.click();
+}
+
+// Navigation clavier globale
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowLeft") {
+    e.preventDefault();
+    goPrev();
+  }
+
+  if (e.key === "ArrowRight") {
+    e.preventDefault();
+    goNext();
+  }
+});
+
+

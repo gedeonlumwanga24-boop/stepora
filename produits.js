@@ -6,9 +6,10 @@ const likedContainer = document.getElementById("liked");
 const cheapContainer = document.getElementById("cheap");
 
 const sneakersContainer = document.getElementById("sneakers");
-const mocassinsContainer = document.getElementById("mocassins");
+const BasketsurbainesContainer = document.getElementById("Basketsurbaines");
 const basketsContainer = document.getElementById("Baskets");
 const timberlandContainer = document.getElementById("Timberland");
+const SneakersLifestyleContainer = document.getElementById("SneakersLifestyle");
 
 const searchInput = document.getElementById("searchInput");
 
@@ -74,8 +75,8 @@ renderProducts(
 
 // 🥿 Mocassins
 renderProducts(
-  mocassinsContainer,
-  products.filter((p) => p.category === "mocassins"),
+  BasketsurbainesContainer,
+  products.filter((p) => p.category === "Basketsurbaines"),
 );
 
 // 🏀 Baskets
@@ -88,6 +89,13 @@ renderProducts(
 renderProducts(
   timberlandContainer,
   products.filter((p) => p.brand === "Timberland"),
+);
+
+
+// 🌲 SneakersLifestyle
+renderProducts(
+  SneakersLifestyleContainer,
+  products.filter((p) => p.brand === "SneakersLifestyle"),
 );
 
 /* ===============================
@@ -109,9 +117,10 @@ searchInput.addEventListener("input", () => {
   likedContainer.innerHTML = "";
   cheapContainer.innerHTML = "";
   sneakersContainer.innerHTML = "";
-  mocassinsContainer.innerHTML = "";
+  BasketsurbainesContainer.innerHTML = "";
   basketsContainer.innerHTML = "";
   timberlandContainer.innerHTML = "";
+  SneakersLifestyleContainer.innerHTML = "";
 });
 
 /* ===============================

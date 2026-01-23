@@ -79,6 +79,10 @@ body.lock {
   font-weight: 500;
 }
 
+nav a:hover {
+  color: #e10600;
+  }
+
 /* HEADER ACTIONS */
 .header-actions {
   display: flex;
