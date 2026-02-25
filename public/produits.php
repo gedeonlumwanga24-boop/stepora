@@ -140,7 +140,7 @@ if (!empty($_SESSION['panier'])) {
   <div class="filter-group1">
     <label>Prix max</label>
     <input type="range" id="priceRange" min="20000" max="80000" value="<?= $prixMax ?>" onchange="updatePrice()">
-    <span id="priceValue"><?= $prixMax ?> FC</span>
+    <span id="priceValue"><?= $prixMax ?> CDF</span>
   </div>
 
   <div class="filter-group">
@@ -189,7 +189,7 @@ if (!empty($_SESSION['panier'])) {
         </p>
 
         <div class="product-footer">
-          <span class="price"><?= number_format($p['prix'], 0, ' ', ' ') ?> FC</span>
+          <span class="price"><?= number_format($p['prix'], 0, ' ', ' ') ?> CDF</span>
           <span class="badge"><?= htmlspecialchars($p['categorie']) ?></span>
         </div>
       </div>

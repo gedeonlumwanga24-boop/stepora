@@ -76,7 +76,7 @@ $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin - Produits</title>
-<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="css/admin.css">
 <style>
 /* ====== CSS FORMULAIRE ====== */
 .form-admin {
@@ -225,7 +225,7 @@ tr:hover {
                     <tr>
                         <td><?= $p['id'] ?></td>
                         <td><?= htmlspecialchars($p['nom']) ?></td>
-                        <td><?= number_format($p['prix'],2,',',' ') ?> €</td>
+                        <td><?= number_format($p['prix'],2,',',' ') ?> CDF</td>
                         <td><?= htmlspecialchars($p['categorie']) ?></td>
                         <td><?= htmlspecialchars($p['tailles']) ?></td>
                         <td>

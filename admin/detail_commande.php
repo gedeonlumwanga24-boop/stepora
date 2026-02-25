@@ -64,7 +64,7 @@ img { width:60px; border-radius:4px }
     </a>
 </p>
 
-    <p><strong>Total :</strong> <?= number_format($commande['total'],2,',',' ') ?> €</p>
+    <p><strong>Total :</strong> <?= number_format($commande['total'],2,',',' ') ?> CDF</p>
     <p><strong>Date :</strong> <?= date('d/m/Y H:i', strtotime($commande['date_commande'])) ?></p> <!-- ajout date -->
     <p><strong>Statut :</strong>
         <span class="statut" style="background:<?= $couleurStatut ?>">
@@ -106,7 +106,7 @@ img { width:60px; border-radius:4px }
             <td><?= htmlspecialchars($p['nom_produit']) ?></td>
             <td><?= htmlspecialchars($p['taille']) ?></td>
             <td><?= (int) $p['quantite'] ?></td>
-            <td><?= number_format($p['prix'],2,',',' ') ?> €</td>
+            <td><?= number_format($p['prix'],2,',',' ') ?> CDF</td>
         </tr>
         <?php endforeach; ?>
     </table>

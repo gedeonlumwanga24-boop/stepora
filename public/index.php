@@ -63,12 +63,12 @@ function renderCarousel($title, $products) {
 
                     <?php if (!empty($p['ancien_prix'])): ?>
                         <span class="old-price">
-                            <?= number_format($p['ancien_prix'], 2, ',', ' ') ?> €
+                            <?= number_format($p['ancien_prix'], 2, ',', ' ') ?> CDF
                         </span>
                     <?php endif; ?>
 
                     <span class="new-price">
-                        <?= number_format($p['prix'], 2, ',', ' ') ?> €
+                        <?= number_format($p['prix'], 2, ',', ' ') ?> CDF
                     </span>
                 </div>
             <?php endforeach; ?>

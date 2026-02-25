@@ -67,7 +67,7 @@ if (empty($panier)) {
                 <strong><?= htmlspecialchars($item['nom']) ?></strong>
                 <p>Taille : <?= htmlspecialchars($item['taille']) ?></p>
                 <p>Qté : <?= (int)$item['quantite'] ?></p>
-                <p><?= number_format($sousTotal, 2, ',', ' ') ?> €</p>
+                <p><?= number_format($sousTotal, 2, ',', ' ') ?> CDF</p>
             </div>
         </div>
         <?php endforeach; ?>
@@ -75,7 +75,7 @@ if (empty($panier)) {
         <hr>
 
         <p>Livraison : <strong>Gratuit</strong></p>
-        <h3>Total : <?= number_format($total, 2, ',', ' ') ?> €</h3>
+        <h3>Total : <?= number_format($total, 2, ',', ' ') ?> CDF</h3>
     </div>
 
 </div>

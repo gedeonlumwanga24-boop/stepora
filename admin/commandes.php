@@ -58,7 +58,7 @@ $commandes = $conn->query("SELECT * FROM commandes ORDER BY date_commande DESC")
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin - Commandes</title>
-<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="css/admin.css">
 <style>
 /* Pastilles de statut */
 .statut {
@@ -150,7 +150,7 @@ th { background:#2c3e50; color:#fff; }
                     <tr>
                         <td data-label="ID">#<?= $c['id'] ?></td>
                         <td data-label="Client"><?= htmlspecialchars($c['prenom'].' '.$c['nom']) ?></td>
-                        <td data-label="Total"><?= number_format($c['total'],2,',',' ') ?> €</td>
+                        <td data-label="Total"><?= number_format($c['total'],2,',',' ') ?> CDF</td>
                         <td data-label="Date"><?= date('d/m/Y H:i', strtotime($c['date_commande'])) ?></td> <!-- affichage date -->
                         <td data-label="Statut">
                             <span class="statut <?= $c['statut']==='validée' ? 'statut-validee' : ($c['statut']==='livrée' ? 'statut-livree' : 'statut-enattente') ?>">

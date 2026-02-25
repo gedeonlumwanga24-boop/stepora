@@ -114,7 +114,7 @@ a.btn {
 
     <div class="card">
         <h3>💰 Chiffre d'affaires</h3>
-        <div class="value green"><?= number_format($ca,2,',',' ') ?> €</div>
+        <div class="value green"><?= number_format($ca,2,',',' ') ?> CDF</div>
     </div>
 </div>
 
@@ -135,7 +135,7 @@ a.btn {
     </div>
             <a class="btn" href="commandes.php">📦 Gérer commandes</a>
             <a class="btn" href="dashboard.php">📊 Dashboard</a>
-            <a href="clients.php" class="active">👤 Clients</a>
+            <a class= "btn"href="clients.php">👤 Clients</a>
             <a class="btn" href="messages.php">📬 Messages</a>
             <a class="btn" href="produits.php">👟 Produits</a>
             <a class="btn" href="stats.php">📊  Statistiques</a>

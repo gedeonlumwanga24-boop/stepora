@@ -68,7 +68,7 @@ function tempsPasse($start, $end) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin - Ajouter un administrateur</title>
-<link rel="stylesheet" href="aj-ad.css">
+<link rel="stylesheet" href="css/aj-ad.css">
 <style>
 table { width:100%; border-collapse: collapse; background:#fff; margin-top:20px; }
 th, td { padding:12px; border-bottom:1px solid #ddd; text-align:left; }
