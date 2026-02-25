@@ -1,0 +1,214 @@
+/* ===============================
+   RESET & BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #c2cbd4, #c4cbd3);
+  color: #2a3d50;
+}
+
+/* ===============================
+   CONTENEUR PRINCIPAL
+================================ */
+.contact-container {
+  max-width: 620px;
+  margin: 140px auto 60px;
+  padding: 0 16px;
+}
+
+/* ===============================
+   TITRES & TEXTE
+================================ */
+.contact-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact-container .subtitle {
+  margin-bottom: 25px;
+  text-align: center;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* ===============================
+   MESSAGES
+================================ */
+.success,
+.error {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.success {
+  background: #eafaf1;
+  color: #1e8449;
+}
+
+.error {
+  background: #fdecea;
+  color: #922b21;
+}
+
+/* ===============================
+   FORMULAIRE
+================================ */
+.contact-form {
+  background: #ffffff;
+  width: 100%;
+  padding: 48px 30px;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* ===============================
+   LABELS
+================================ */
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 18px;
+  font-size: 0.95rem;
+}
+
+/* ===============================
+   INPUTS / SELECT / TEXTAREA
+================================ */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 140px;
+}
+
+/* Focus */
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #2c3e50;
+  box-shadow: 0 0 0 2px rgba(44,62,80,0.15);
+}
+
+/* ===============================
+   BOUTON
+================================ */
+.contact-form button {
+  margin-top: 26px;
+  width: 100%;
+  padding: 15px;
+  background: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form button:hover {
+  background: #1f2d3a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.contact-form button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ===============================
+   RESPONSIVE MOBILE
+================================ */
+@media (max-width: 768px) {
+
+  .contact-container {
+    margin: 110px auto 40px;
+  }
+
+  .contact-container h1 {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  body {
+    background: #f2f4f7;
+  }
+
+  .contact-container {
+    margin: 90px 0 0;
+    padding: 0;
+    max-width: none;
+  }
+
+  .contact-container h1 {
+    font-size: 1.7rem;
+    padding: 24px 20px 6px;
+    text-align: left;
+  }
+
+  .contact-container .subtitle {
+    padding: 0 20px 18px;
+    text-align: left;
+  }
+
+  .success,
+  .error {
+    margin: 0 20px 16px;
+    border-radius: 12px;
+  }
+
+  .contact-form {
+    border-radius: 0;
+    box-shadow: none;
+    padding: 20px;
+  }
+
+  .contact-form label {
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 1rem;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .contact-form textarea {
+    min-height: 160px;
+  }
+
+  .contact-form button {
+    margin-top: 28px;
+    padding: 18px;
+    font-size: 1.1rem;
+    border-radius: 14px;
+  }
+}

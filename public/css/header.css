@@ -1,0 +1,334 @@
+/* ===============================
+   HEADER / NAVBAR
+================================ */
+.main-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* 👉 NAVBAR PLUS ÉPAISSE */
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 22px 25px; /* ⬅️ hauteur augmentée */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo a {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 1.7rem;
+  color: #000;
+  text-decoration: none;
+}
+/* ===============================
+   NAV DESKTOP
+================================ */
+.nav-menu {
+  display: flex;
+  gap: 34px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+}
+
+.nav-menu a:hover {
+  color: #e10600;
+}
+
+
+/* ===============================
+   HEADER ACTIONS
+================================ */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.icon-btn,
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.45rem;
+  cursor: pointer;
+  position: relative;
+  color: #000;
+}
+
+/* CART BADGE */
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #000;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+
+/* ===============================
+   DESKTOP PAR DÉFAUT
+================================ */
+
+/* cacher menu mobile et hamburger en desktop */
+.menu-toggle {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
+
+
+
+
+/* ===============================
+   MENU MOBILE RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+
+  /* Cacher le menu desktop */
+  .nav-menu {
+    display: none;
+  }
+
+  /* Bouton hamburger */
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.45rem;
+    cursor: pointer;
+    color: #000;
+  }
+
+  /* Overlay semi-transparent */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    z-index: 1400;
+  }
+
+  .overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Menu mobile */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80%; /* laisse un peu de contenu derrière */
+    background: #fff;
+    padding: 100px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    z-index: 1600;
+    border-right: 1px solid rgba(0,0,0,0.08);
+    border-radius: 0 12px 12px 0;
+  }
+
+  /* Menu ouvert avec aura/glow */
+  .mobile-menu.open {
+    transform: translateX(0);
+    box-shadow: 
+      0 0 40px rgba(26, 60, 255, 0.25),
+      0 0 80px rgba(26, 60, 255, 0.18),
+      0 0 120px rgba(26, 60, 255, 0.12);
+  }
+
+  /* Bouton fermer X */
+  .mobile-menu .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    z-index: 1700;
+  }
+
+  /* Liens du menu avec flèche alignée à droite */
+  .mobile-menu a {
+    display: flex;
+    justify-content: space-between; /* texte à gauche, flèche à droite */
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 12px 0;
+    transition: color 0.25s ease;
+    position: relative;
+  }
+
+  /* Flèche à droite */
+  .mobile-menu a::after {
+    content: '>'; /* flèche */
+    font-weight: 600;
+    color: #111;
+    transition: transform 0.25s ease, color 0.25s ease;
+  }
+
+  /* Hover : texte + flèche bougent */
+  .mobile-menu a:hover {
+    color: #e10600;
+  }
+
+  .mobile-menu a:hover::after {
+    color: #e10600;
+    transform: translateX(5px); /* léger slide à droite */
+  }
+}
+
+
+
+
+
+
+
+/* ===============================
+   MENU MOBILE OPTIMISÉ
+================================ */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 80%; /* laisse 20% visible derrière */
+  background: #fff;
+  padding: 100px 25px 25px; /* haut + côtés + bas */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transform: translateX(-100%);
+  transition: transform 0.35s ease;
+  z-index: 1600;
+  border-right: 1px solid rgba(0,0,0,0.08);
+  border-radius: 0 12px 12px 0; /* arrondi côté droit */
+}
+
+/* Bouton fermer “X” */
+.mobile-menu .close-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Menu ouvert */
+.mobile-menu.open {
+    transform: translateX(0);
+    box-shadow: 
+      0 0 40px rgba(26, 60, 255, 0.25),
+      0 0 80px rgba(26, 60, 255, 0.18),
+      0 0 120px rgba(26, 60, 255, 0.12);
+}
+
+/* Lien menu */
+.mobile-menu a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.15rem;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+.mobile-menu a:hover {
+  color: #e10600;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 1500;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
+
+/* MENU MOBILE LIENS */
+.mobile-menu a {
+  display: flex;
+  justify-content: space-between; /* texte à gauche, flèche à droite */
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 12px 0;
+  transition: color 0.25s ease;
+  position: relative;
+}
+
+/* Flèche à droite avec ::after */
+.mobile-menu a::after {
+  content: '>'; /* la flèche */
+  font-weight: 600;
+  color: #111;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+/* Hover : change la couleur du texte et de la flèche, effet léger de décalage */
+.mobile-menu a:hover {
+  color: #e10600;
+}
+
+.mobile-menu a:hover::after {
+  color: #e10600;
+  transform: translateX(5px); /* effet “slide” à droite */
+}

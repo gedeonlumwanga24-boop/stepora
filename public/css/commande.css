@@ -1,0 +1,189 @@
+/* ===============================
+   RESET & BASE
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #111;
+}
+
+input, button {
+    font-family: inherit;
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+.checkout-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    padding: 0 20px;
+}
+
+/* ===============================
+   FORMULAIRE (GAUCHE)
+================================ */
+.checkout-form h1 {
+    text-align: center;
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.checkout-form h2 {
+    margin-top: 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.checkout-form input {
+    width: 100%;
+    padding: 14px 12px;
+    margin-top: 14px;
+    border: 1px solid #bbb;
+    font-size: 0.95rem;
+}
+
+.checkout-form input:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.checkout-form .row {
+    display: flex;
+    gap: 20px;
+}
+
+/* ===============================
+   BOUTON COMMANDE
+================================ */
+.btn-commande {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: all 0.3s ease;
+}
+
+.btn-commande:hover {
+    background: #222;
+}
+
+/* ===============================
+   RÉCAP COMMANDE (DROITE)
+================================ */
+.checkout-recap {
+    border-left: 1px solid #ddd;
+    padding-left: 40px;
+}
+
+.checkout-recap h2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.recap-produit {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.recap-produit img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    background: #f2f2f2;
+}
+
+.recap-produit p {
+    font-size: 0.9rem;
+    margin-top: 3px;
+}
+
+.checkout-recap hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.checkout-recap h3 {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+/* ===============================
+   RESPONSIVE MOBILE
+================================ */
+@media (max-width: 900px) {
+    .checkout-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .checkout-recap {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid #ddd;
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .checkout-form h1 {
+        font-size: 1.6rem;
+    }
+
+    .checkout-form .row {
+        flex-direction: column;
+    }
+
+    .btn-commande {
+        padding: 14px;
+        font-size: 0.95rem;
+    }
+}
+
+
+/* ===============================
+   TOAST NOTIFICATION
+================================ */
+.toast {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: #1db954;
+    color: #fff;
+    padding: 16px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: all 0.4s ease;
+    z-index: 999;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}

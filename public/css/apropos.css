@@ -1,0 +1,213 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #111;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomSoft {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* HERO */
+.apropos-hero {
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: zoomSoft 1s ease forwards;
+}
+
+.apropos-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.apropos-hero .hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeUp 1s ease forwards;
+}
+
+.apropos-hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.apropos-hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #ff4500;
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* SECTIONS */
+.apropos-section {
+  padding: 70px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.apropos-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #111;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.apropos-section p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 15px;
+  animation: fadeUp 1s ease forwards;
+}
+
+.apropos-section ul {
+  margin-top: 10px;
+  list-style: disc inside;
+}
+
+/* IMAGE LEFT / RIGHT */
+.apropos-section.image-left,
+.apropos-section.image-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.apropos-section.image-left .image,
+.apropos-section.image-right .image {
+  flex: 1;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  animation: zoomSoft 1s ease forwards;
+  transition: transform 0.4s ease;
+}
+
+.apropos-section.image-left .image:hover,
+.apropos-section.image-right .image:hover {
+  transform: scale(1.03);
+}
+
+.apropos-section.image-left .text,
+.apropos-section.image-right .text {
+  flex: 1;
+}
+
+.apropos-section.image-right {
+  flex-direction: row-reverse;
+}
+
+/* VALUES */
+.apropos-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+/* CTA FULL */
+.apropos-cta {
+  text-align: center;
+  padding: 70px 20px;
+  background: #111;
+  color: #fff;
+}
+
+.apropos-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .apropos-section.image-left,
+  .apropos-section.image-right {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .apropos-section.image-left .image,
+  .apropos-section.image-right .image {
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .apropos-hero {
+    height: 65vh;
+  }
+
+  .apropos-hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .apropos-hero p {
+    font-size: 1rem;
+  }
+
+  .apropos-section {
+    padding: 50px 16px;
+  }
+}

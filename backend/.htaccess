@@ -1,0 +1,41 @@
+# =============================
+# ACTIVER LE MOTEUR DE REWRITE
+# =============================
+RewriteEngine On
+
+# =============================
+# BLOQUER LES DOSSIERS SENSIBLES
+# =============================
+RewriteRule ^(backend|admin|config) - [F,L]
+
+# =============================
+# FORCER HTTPS
+# =============================
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# =============================
+# SECURISER LES FICHIERS SENSIBLES
+# =============================
+<FilesMatch "\.(htaccess|env|ini|phar|sh|bat|cmd|sql)$">
+    Require all denied
+</FilesMatch>
+
+# =============================
+# URL FRIENDLY / REDIRECTION
+# =============================
+# Rediriger toutes les requêtes vers index.php si le fichier ou dossier n’existe pas
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L,QSA]
+
+# =============================
+# OPTIONS SECURITÉ SUPPLÉMENTAIRES
+# =============================
+# Désactiver lister le contenu des dossiers
+Options -Indexes
+
+# Empêcher le hotlinking des images (si besoin)
+# RewriteCond %{HTTP_REFERER} !^$
+# RewriteCond %{HTTP_REFERER} !^https://(www\.)?tonsite.com/ [NC]
+# RewriteRule \.(jpg|jpeg|png|gif)$ - [F]

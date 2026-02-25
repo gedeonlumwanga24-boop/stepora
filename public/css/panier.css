@@ -1,0 +1,232 @@
+/* ===============================
+   RESET ET BASE
+=============================== */
+body { 
+    font-family: 'Inter', sans-serif;
+    background: #f5f5f5;
+    color: #111;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* pour éviter débordement mobile */
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+/* ===============================
+   PANIER GRID
+=============================== */
+.panier-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: flex-start;
+}
+
+/* PRODUITS */
+.panier-produits {
+    flex: 2;
+}
+
+.produit-card {
+    display: flex;
+    gap: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.img-produit img {
+    width: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.produit-card:hover .img-produit img {
+    transform: scale(1.05);
+}
+
+.infos-produit h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.infos-produit p {
+    font-size: 0.9rem;
+    margin: 3px 0;
+}
+
+.actions-produit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.actions-produit select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.actions-produit .prix {
+    font-weight: 700;
+    margin-left: auto;
+    font-size: 1rem;
+}
+
+.actions-produit .supprimer,
+.actions-produit .like {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+.actions-produit .like:hover,
+.actions-produit .supprimer:hover {
+    transform: scale(1.2);
+}
+
+/* SYNTHÈSE COMMANDE */
+.synthese-commande {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    height: fit-content;
+}
+
+.sticky {
+    position: sticky;
+    top: 20px;
+}
+
+.synthese-commande h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.commander-btn {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.commander-btn:hover {
+    background: #333;
+    transform: scale(1.02);
+}
+
+/* ===============================
+   PANIER — MOBILE STYLE ADIDAS
+=============================== */
+@media (max-width: 600px) {
+
+  /* STRUCTURE GLOBALE */
+  .panier-grid {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .panier-produits,
+  .synthese-commande {
+    width: 100%;
+  }
+
+  /* DÉSACTIVE LE STICKY EN MOBILE */
+  .synthese-commande,
+  .synthese-commande.sticky {
+    position: relative;
+    top: auto;
+  }
+
+  /* ===== PRODUIT ===== */
+  .produit-card {
+    flex-direction: row; /* image à gauche comme Adidas */
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .img-produit img {
+    width: 90px;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  .infos-produit h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .infos-produit p {
+    font-size: 0.85rem;
+    color: #555;
+  }
+
+  /* ACTIONS PRODUIT */
+  .actions-produit {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .actions-produit select {
+    font-size: 0.85rem;
+  }
+
+  .actions-produit .prix {
+    margin-left: 0;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  /* ===== SYNTHÈSE ===== */
+  .synthese-commande {
+    padding: 18px;
+    border-radius: 6px;
+  }
+
+  .synthese-commande h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+
+  /* BOUTON COMMANDER — GROS, CLAIR */
+  .commander-btn {
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+}

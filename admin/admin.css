@@ -1,0 +1,189 @@
+/* ===============================
+   CONTAINER
+=============================== */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===============================
+   SIDEBAR
+=============================== */
+.sidebar {
+    width: 220px;
+    background: #2c3e50;
+    color: #fff;
+    padding: 30px 20px;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+    font-size: 22px;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 12px 15px;
+    margin: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #34495e;
+}
+
+.sidebar nav a.logout {
+    margin-top: 20px;
+    background: #e74c3c;
+    text-align: center;
+}
+
+.sidebar nav a.logout:hover {
+    background: #c0392b;
+}
+
+/* ===============================
+   MAIN CONTENT
+=============================== */
+.content {
+    flex: 1;
+    padding: 30px;
+    background: #ecf0f1;
+}
+
+.content h1 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* ===============================
+   TABLE
+=============================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #2c3e50;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #eaeaea;
+}
+
+button {
+    padding: 6px 12px;
+    margin: 0 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button.delete {
+    background: #e74c3c;
+    color: #fff;
+}
+
+button.delete:hover {
+    background: #c0392b;
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 1024px) {
+    .admin-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+    }
+    .sidebar nav a {
+        flex: 1;
+        text-align: center;
+        margin: 0 5px;
+    }
+}
+
+
+
+
+/* FORMULAIRE ADMIN */
+.form-admin {
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.form-admin label { display: block; margin-top: 10px; font-weight: bold; }
+.form-admin input[type="text"],
+.form-admin input[type="number"],
+.form-admin textarea,
+.form-admin input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-admin textarea { min-height: 60px; resize: vertical; }
+
+.form-admin button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-admin button:hover { background: #34495e; }
+
+.tailles-container { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* TABLEAU PRODUITS */
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 6px; overflow: hidden; }
+th, td { padding: 12px; border-bottom: 1px solid #ddd; text-align: left; }
+th { background: #2c3e50; color: #fff; }
+tr:nth-child(even) { background: #f9f9f9; }
+tr:hover { background: #eaeaea; }
+
+.btn { padding: 6px 12px; border-radius: 4px; text-decoration: none; color: #fff; margin-right: 5px; font-size: 14px; }
+.btn.edit { background: #3498db; }
+.btn.edit:hover { background: #2980b9; }
+.btn.delete { background: #e74c3c; }
+.btn.delete:hover { background: #c0392b; }
+
+
+
+
+/* FORMULAIRE ADMIN */
+
+
